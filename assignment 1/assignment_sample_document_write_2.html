@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+    File 02_assignment_sample_document_write_2.html
+    
+    Example showing several definitions, calculations,
+    and writing results to the page using document.write.
+    In this example, the <script> blocks are used for
+    each individual item to be written to the page.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Session 02 Sample Exercise</title>
+
+<script type="text/javascript">
+    var riceCost = 1.5;
+    var riceQty  = 2;
+
+    var beansCost = 1.25;
+    var beansQty  = 3;
+
+    var ricePurchase  = riceCost  * riceQty;
+    var beansPurchase = beansCost * beansQty;
+
+    var initialPurchase = ricePurchase + beansPurchase;
+
+    var employeeDiscount = .05;  // 5%
+
+    var thisDiscount = initialPurchase * employeeDiscount;
+    
+    var employeeCost = initialPurchase - thisDiscount;
+
+    var shipping = 5;
+
+    var finalCost = initialPurchase - thisDiscount + shipping;
+</script>
+</head>
+
+<body>
+    <h1>Example that shows another way to use document.write()</h1>   
+
+    The cost of rice is $<script>document.write(ricePurchase.toFixed(2));</script>
+    <br>
+
+    The cost of beans is $<script>document.write(beansPurchase);</script>
+    <br>
+
+    The initial purchase cost is $<script>document.write(initialPurchase);</script>
+    <br>
+
+    The employee discount is $<script>document.write(thisDiscount.toFixed(2));</script>
+    <br>
+
+    The employee cost is $<script>document.write(employeeCost.toFixed(2));</script>
+    <br>
+    
+    The shipping cost is $<script>document.write(shipping.toFixed(2));</script>
+    <br>
+    
+    The final purchase cost is $<script>document.write(finalCost.toFixed(2));</script>
+    <br>
+</body>
+</html>

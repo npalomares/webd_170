@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+    File 02_assignment_sample_DOM.html
+    
+    Example showing several definitions, calculations,
+    and writing results to the page using document.getElementById() - the DOM.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Session 02 Sample Exercise</title>
+
+<script type="text/javascript">
+    var riceCost = 1.5;
+    var riceQty  = 2;
+
+    var beansCost = 1.25;
+    var beansQty  = 3;
+
+    var ricePurchase  = riceCost  * riceQty;
+    var beansPurchase = beansCost * beansQty;
+
+    var initialPurchase = ricePurchase + beansPurchase;
+
+    var employeeDiscount = .05;  // 5%
+
+    var thisDiscount = initialPurchase * employeeDiscount;
+    
+    var employeeCost = initialPurchase - thisDiscount;
+
+    var shipping = 5;
+
+    var finalCost = initialPurchase - thisDiscount + shipping;
+
+    window.onload = function(){
+        document.getElementById("id_rice"       ).innerHTML = ricePurchase   .toFixed(2);
+        document.getElementById("id_beans"      ).innerHTML = beansPurchase  .toFixed(2);
+        document.getElementById("id_initial"    ).innerHTML = initialPurchase.toFixed(2);
+        document.getElementById("id_empDiscount").innerHTML = thisDiscount   .toFixed(2);
+        document.getElementById("id_empCost"    ).innerHTML = employeeCost   .toFixed(2);
+        document.getElementById("id_shipping"   ).innerHTML = shipping       .toFixed(2);
+        document.getElementById("id_final"      ).innerHTML = finalCost      .toFixed(2);
+    }
+</script>
+</head>
+
+<body>
+    <h1>Example using getElementById() and the Document Object Model</h1>   
+
+    The cost of rice is $<span id="id_rice"></span>
+    <br>
+
+    The cost of beans is $<span id="id_beans"></span>
+    <br>
+
+    The initial purchase cost is $<span id="id_initial"></span>
+    <br>
+
+    The employee discount is $<span id="id_empDiscount"></span>
+    <br>
+    
+    The employee cost is $<span id="id_empCost"></span>
+    <br>
+    
+    The shipping cost is $<span id="id_shipping"></span>
+    <br>
+
+    The final purchase cost is $<span id="id_final"></span>
+    <br>
+</body>
+</html>

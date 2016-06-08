@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+    File 02_assignment_sample_document_write.html
+    
+    Example showing several definitions, calculations,
+    and writing results to the page using document.write.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Session 02 Sample Exercise</title>
+
+<script>
+    var riceCost = 1.5;
+    var riceQty  = 2;
+
+    var beansCost = 1.25;
+    var beansQty  = 3;
+
+    var ricePurchase  = riceCost  * riceQty;
+    var beansPurchase = beansCost * beansQty;
+
+    var initialPurchase = ricePurchase + beansPurchase;
+
+    var employeeDiscount = .05;  // 5%
+
+    var thisDiscount = initialPurchase * employeeDiscount;
+    
+    var employeeCost = initialPurchase - thisDiscount;
+
+    var shipping = 5;
+
+    var finalCost = initialPurchase - thisDiscount + shipping;
+</script>
+</head>
+
+<body>
+    <h2>In this example we are putting all of the content inside document.write()</h2>
+
+    <script>
+        document.write("Cost of rice: $" + ricePurchase.toFixed(2) + "<br>" );
+        document.write("Cost of beans: $" + beansPurchase + "<br>" );
+        document.write("Initial purchase cost: $" + initialPurchase + "<br>" );
+        document.write("Employee Discount: $" + thisDiscount.toFixed(2) + "<br>" );
+        document.write("Employee Cost: $" + employeeCost.toFixed(2) + "<br>");
+        document.write("Shipping: $" + shipping.toFixed(2) + "<br>");
+        document.write("Final Cost: $" + finalCost.toFixed(2) + "<br>" );
+    </script>
+</body>
+</html>
