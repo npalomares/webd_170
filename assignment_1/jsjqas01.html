@@ -2,6 +2,7 @@
 <!-- Nicholas Palomares -->
 <html lang="en">
 <head>
+	<meta charset="UTF-8">	
 	<title>Javascript Class - 6/8/2016</title>
 <script type="text/Javascript">
 //start assingment here
@@ -11,17 +12,24 @@
 var initialCost = 200;
 var discount = 200 * .10;
 var postDiscount = initialCost - discount;
-var taxAmount = .725;
-var subTotal = postDiscount * taxAmount;
-var grandTotal = subTotal + 5.50;
+var taxAmount = postDiscount * .0725;
+var subTotal = postDiscount + taxAmount;
+var shippingTotal = 5.50;
+var grandTotal = subTotal + shippingTotal;
 
 // Target our IDs here
 window.onload = function() {
-	document.getElementById('initialCost').innerHTML = "The initial cost is $" + "<strong>" + initialCost + "</strong>";
-	document.getElementById('postDiscount').innerHTML = "The cost after a 10% discount is $" + "<strong>" + postDiscount + "</strong>";
-	document.getElementById('taxAmount').innerHTML = "The tax amount is " + "<strong>" + taxAmount + "</strong>";
-	document.getElementById('subTotal').innerHTML = "The subtotal after tax is $" + "<strong>" + subTotal.toFixed(2) + "</strong>";
-	document.getElementById('grandTotal').innerHTML = "The grand total after shipping is $"  + "<strong>" + grandTotal.toFixed(2) + "</strong>"; 
+	document.getElementById('initialCost').innerHTML = "The initial cost is " + "<strong>$" + initialCost + "</strong>";
+	document.getElementById('postDiscount').innerHTML = "The cost after a 10% discount ($" + discount + ") is $" + "<strong>" + postDiscount + "</strong>";
+	document.getElementById('taxAmount').innerHTML = "The tax amount is " + "<strong> $" + taxAmount.toFixed(2) + "</strong>";
+	document.getElementById('subTotal').innerHTML = "The subtotal after tax is " + "<strong>$" + subTotal.toFixed(2) + "</strong>";
+	document.getElementById('grandTotal').innerHTML = "The grand total after shipping ($" + shippingTotal.toFixed(2) + ") is $"  + "<strong>" + grandTotal.toFixed(2) + "</strong>"; 
+
+	if(grandTotal >= 195) {
+		console.log("Really can't afford this, but oh well.");
+	} else {
+		console.log("Wheeeew, that's a pretty good deal.");
+	}
 }
 
 
