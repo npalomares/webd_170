@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- Nicholas Palomares -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+	<title>Javascript Class - 6/8/2016</title>
+
+	<style>
+	.text-center {
+		text-align: center;
+	}
+	.container {
+		width: 1170px;
+		margin: 0 auto;
+	}
+	#main {
+		padding: 100px;
+		background-color: #CCC;
+		margin: 0 auto;
+	}
+
+	</style>	
+
+	<script type="text/Javascript">
+	//start assingment here
+	// https://youtu.be/PFOGx4DYmh8?list=PL8T13bdPZZbtOiJU4zZFF9VHJhSyMT9x3
+
+	// Declare our calculation variables here
+	var initialCost = 200;
+	var discount = 200 * .10;
+	var postDiscount = initialCost - discount;
+	var taxAmount = postDiscount * .0725;
+	var subTotal = postDiscount + taxAmount;
+	var shippingTotal = 5.50;
+	var grandTotal = subTotal + shippingTotal;
+
+	// Target our IDs here
+	window.onload = function() {
+		document.getElementById('initialCost').innerHTML = "The initial cost is " + "<strong>$" + initialCost + "</strong>";
+		document.getElementById('postDiscount').innerHTML = "The cost after a 10% discount ($" + discount + ") is $" + "<strong>" + postDiscount + "</strong>";
+		document.getElementById('taxAmount').innerHTML = "The tax amount is " + "<strong> $" + taxAmount.toFixed(2) + "</strong>";
+		document.getElementById('subTotal').innerHTML = "The subtotal after tax is " + "<strong>$" + subTotal.toFixed(2) + "</strong>";
+		document.getElementById('grandTotal').innerHTML = "The grand total after shipping ($" + shippingTotal.toFixed(2) + ") is $"  + "<strong>" + grandTotal.toFixed(2) + "</strong>"; 
+
+		if(grandTotal >= 195) {
+			console.log("Really can't afford this, but oh well.");
+		} else {
+			console.log("Wheeeew, that's a pretty good deal.");
+		}
+	}
+	</script>	
+</head>
+
+<body>
+<!-- Start our id elements that we target in the head -->
+<div class="container text-center">
+	<h1>JS Class - Assignment One</h1>
+	<main id="main">
+		<h2>Calculations</h2>
+		<p id="initialCost"></p>
+		<p id="postDiscount"></p>
+		<p id="taxAmount"></p>
+		<p id="subTotal"></p>
+		<p id="grandTotal"></p>
+	</main>
+</div>
+</body>
+</html>
