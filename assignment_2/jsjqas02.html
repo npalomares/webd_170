@@ -6,6 +6,12 @@
 	<title>Javascript Class - 6/15/2016</title>
 
 	<style>
+	body {
+		background: url(http://www.channel3000.com/image/view/-/23727468/highRes/2/-/maxh/640/maxw/640/-/15a69fq/-/Valentines-Day-hearts-with-flower-petals-cropped-jpg.jpg) no-repeat center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+	}
 	.text-center {
 		text-align: center;
 	}
@@ -15,8 +21,15 @@
 	}
 	#main {
 		padding: 100px;
-		background-color: #CCC;
+		background-color: #FFF;
 		margin: 0 auto;
+		opacity: 0.9;
+	}
+	section {
+		padding: 30px 0;
+	}
+	section.calculations {
+		border-top: 1px solid #000;
 	}
 
 	</style>	
@@ -27,6 +40,21 @@
 
 	// using Math.random() version
 	var weight = Math.floor(Math.random() * 10) + 1;	
+
+	// Use a prompt to enter #, be sure to check that # is 1-10
+	//var weight = prompt("Please enter a number that is 1-10");
+
+	// make sure the number is 1-10
+	// if(weight < 1) {
+	// 	//alert("You need to enter a weight that is higher than 1lb.");
+	// 	prompt("You need to enter a weight that is higher than 1lb.");
+	// } else if(weight >= 11) {
+	// 	//alert("You need to enter a weight less than 10lbs.");
+	// 	prompt("You need to enter a weight less than 10lbs.");
+	// } else {
+	// 	alert("Thank you, now let's calculate your cost.");
+	// }
+
 	var boxCost = 0;	
 
 	if(weight <= 5) {
@@ -46,11 +74,11 @@
 	} else if(weight <= 9) {
 		shipping = 15;
 	} else {
-		shipping = $20;
+		shipping = 20;
 	}
 	
 
-	var grandTotal = weight + boxCost + shipping;
+	var grandTotal = boxCost + shipping;
 	// var postDiscount = initialCost - discount;
 	// var taxAmount = postDiscount * .0725;
 	// var subTotal = postDiscount + taxAmount;
@@ -61,9 +89,9 @@
 	window.onload = function() {
 		//alert("The weight of the package is " + weight + "lbs. Box Price is $" + boxPrice + " shipping is $" + shipping);
 		document.getElementById('weight').innerHTML = "Number of lbs. ordered " + "<strong>" + weight + "</strong>";
-		document.getElementById('boxCost').innerHTML = "Cost of the box <strong>$" + boxCost + "</strong>";
-		document.getElementById('shipping').innerHTML = "Cost shipping <strong>$" + shipping + "</strong>";
-		document.getElementById('total').innerHTML = "Total Cost - <strong>$" + grandTotal + "</strong>";				
+		document.getElementById('boxCost').innerHTML = "Cost of the box <strong>$" + boxCost.toFixed(2) + "</strong>";
+		document.getElementById('shipping').innerHTML = "Cost shipping <strong>$" + shipping.toFixed(2) + "</strong>";
+		document.getElementById('total').innerHTML = "Total Cost - <strong>$" + grandTotal.toFixed(2) + "</strong>";				
 		// document.getElementById('taxAmount').innerHTML = "The tax amount is " + "<strong> $" + taxAmount.toFixed(2) + "</strong>";
 		// document.getElementById('subTotal').innerHTML = "The subtotal after tax is " + "<strong>$" + subTotal.toFixed(2) + "</strong>";
 		// document.getElementById('grandTotal').innerHTML = "The grand total after shipping ($" + shippingTotal.toFixed(2) + ") is $"  + "<strong>" + grandTotal.toFixed(2) + "</strong>"; 
@@ -84,8 +112,8 @@
 	<main id="main">
 		<h2>See's Candy Valentine's Special</h2>
 		<h3>Special Heart Shaped Box of Assorted Chocolate</h3>
-		<h5>1lb. or 10lbs. box available</h5>
-		<section class="pricing">
+		<h4>1lb. or 10lbs. box available</h4>
+<!-- 		<section class="pricing">
 			<p id="smBox"></p>
 			<p id="medBox"></p>
 			<p id="lgBox"></p>
@@ -96,7 +124,7 @@
 			<p id="three"></p>
 			<p id="four"></p>
 			<p id="five"></p>
-		</section>
+		</section> -->
 		<section class="calculations">
 			<p id="weight"></p>
 			<p id="boxCost"></p>
