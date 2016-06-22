@@ -3,36 +3,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">	
-	<title>Javascript Class - 6/15/2016</title>
+	<title>Javascript Class - 6/22/2016</title>
 
-	<style>
-	body {
-		background: url(http://www.channel3000.com/image/view/-/23727468/highRes/2/-/maxh/640/maxw/640/-/15a69fq/-/Valentines-Day-hearts-with-flower-petals-cropped-jpg.jpg) no-repeat center center;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		background-size: cover;
-	}
-	.text-center {
-		text-align: center;
-	}
-	.container {
-		width: 1170px;
-		margin: 0 auto;
-	}
-	#main {
-		padding: 100px;
-		background-color: #FFF;
-		margin: 0 auto;
-		opacity: 0.9;
-	}
-	section {
-		padding: 30px 0;
-	}
-	section.calculations {
-		border-top: 1px solid #000;
-	}
-
-	</style>	
+	<link href="style.css" rel="stylesheet" >	
 
 	<script type="text/Javascript">
 
@@ -40,21 +13,6 @@
 
 	// using Math.random() version
 	var weight = Math.floor(Math.random() * 10) + 1;	
-
-	// Use a prompt to enter #, be sure to check that # is 1-10
-	//var weight = prompt("Please enter a number that is 1-10");
-
-	// make sure the number is 1-10
-	// if(weight < 1) {
-	// 	//alert("You need to enter a weight that is higher than 1lb.");
-	// 	prompt("You need to enter a weight that is higher than 1lb.");
-	// } else if(weight >= 11) {
-	// 	//alert("You need to enter a weight less than 10lbs.");
-	// 	prompt("You need to enter a weight less than 10lbs.");
-	// } else {
-	// 	alert("Thank you, now let's calculate your cost.");
-	// }
-
 	var boxCost = 0;	
 
 	if(weight <= 5) {
@@ -77,30 +35,14 @@
 		shipping = 20;
 	}
 	
-
 	var grandTotal = boxCost + shipping;
-	// var postDiscount = initialCost - discount;
-	// var taxAmount = postDiscount * .0725;
-	// var subTotal = postDiscount + taxAmount;
-	// var shippingTotal = 5.50;
-	// var grandTotal = subTotal + shippingTotal;
 
 	// Target our IDs here
 	window.onload = function() {
-		//alert("The weight of the package is " + weight + "lbs. Box Price is $" + boxPrice + " shipping is $" + shipping);
 		document.getElementById('weight').innerHTML = "Number of lbs. ordered " + "<strong>" + weight + "</strong>";
-		document.getElementById('boxCost').innerHTML = "Cost of the box <strong>$" + boxCost.toFixed(2) + "</strong>";
+		document.getElementById('boxCost').innerHTML = "Cost of the box is <strong>$" + boxCost.toFixed(2) + "</strong>";
 		document.getElementById('shipping').innerHTML = "Cost shipping <strong>$" + shipping.toFixed(2) + "</strong>";
 		document.getElementById('total').innerHTML = "Total Cost - <strong>$" + grandTotal.toFixed(2) + "</strong>";				
-		// document.getElementById('taxAmount').innerHTML = "The tax amount is " + "<strong> $" + taxAmount.toFixed(2) + "</strong>";
-		// document.getElementById('subTotal').innerHTML = "The subtotal after tax is " + "<strong>$" + subTotal.toFixed(2) + "</strong>";
-		// document.getElementById('grandTotal').innerHTML = "The grand total after shipping ($" + shippingTotal.toFixed(2) + ") is $"  + "<strong>" + grandTotal.toFixed(2) + "</strong>"; 
-
-		// if(grandTotal >= 195) {
-		// 	console.log("Really can't afford this, but oh well.");
-		// } else {
-		// 	console.log("Wheeeew, that's a pretty good deal.");
-		// }
 	}
 	</script>	
 </head>
@@ -112,19 +54,21 @@
 	<main id="main">
 		<h2>See's Candy Valentine's Special</h2>
 		<h3>Special Heart Shaped Box of Assorted Chocolate</h3>
-		<h4>1lb. or 10lbs. box available</h4>
-<!-- 		<section class="pricing">
-			<p id="smBox"></p>
-			<p id="medBox"></p>
-			<p id="lgBox"></p>
-		</section>	
-		<section class="shipping">
-			<p id="one"></p>
-			<p id="two"></p>
-			<p id="three"></p>
-			<p id="four"></p>
-			<p id="five"></p>
-		</section> -->
+		<h4>1 lb. or 10 lb. box available</h4>
+		<div class="pricing-info clearfix">
+			<section class="pricing">
+				<p id="smBox">$20 per pound for box of 1-5 lbs.</p>
+				<p id="medBox">$15 per pound for box of 6-9 lbs.</p>
+				<p id="lgBox">$10 per pound for box of 10 lb. box</p>
+			</section>	
+			<section class="shipping">
+				<p id="one">$5 for 1-3 lbs. box</p>
+				<p id="two">$10 for 4-7 lbs. box</p>
+				<p id="three">$15 for 8-9 lbs. box</p>
+				<p id="four">$20 for 10 lb. box</p>
+				<p id="five"></p>
+			</section>
+		</div>
 		<section class="calculations">
 			<p id="weight"></p>
 			<p id="boxCost"></p>
