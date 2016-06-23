@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Class 3</title>
+    
+    <script>
+        function clear() {
+            document.getElementById('response').firstChild.nodeValue = "";
+            
+           var theWidth = document.getElementById('width');
+           var theHeight = document.getElementById('height');
+           
+           theWidth.value = "";
+           theHeight.value = '';
+            
+        }
+        
+        
+        
+        function calculate() {
+            //alert('calc');
+           
+           var theWidth = document.getElementById('width');
+           var theHeight = document.getElementById('height');
+           
+           var errorW = document.getElementById('errW');
+           var errorH = document.getElementById('errH');
+           
+           // clear out error messages
+           errorW.firstChild.nodeValue = " ";
+           errorH.firstChild.nodeValue = " ";
+           
+           // t/f test
+           
+           var isValid = true;
+           
+           if (theWidth.value <=0  || isNaN(theWidth.value) ) {
+            // alert('problem with width');
+            errorW.firstChild.nodeValue = "Please enter a valid width";
+            //return false;
+            isValid = false;
+           }
+           //else {
+           // errorW.firstChild.nodeValue = " ";
+          // }
+           
+           
+           if (theHeight.value <=0  || isNaN(theHeight.value) ) {
+             //alert('problem with height');
+             errorH.firstChild.nodeValue = "Please enter a valid height";
+             //return false;
+             isValid = false;
+           }
+           
+           
+           var theArea = theWidth.value * theHeight.value;
+           
+           if (isValid) {
+            document.getElementById('response').firstChild.nodeValue = "The area is "  + theArea;
+           }
+           
+           
+           
+           
+        } // end function
+        
+        
+        window.onload = function(){
+            
+            document.getElementById('btn').onclick = calculate;
+            document.getElementById('btn2').onclick = clear;
+            
+        }
+        
+    </script>
+</head>
+
+<body>
+    <h1>Class 3</h1>
+    
+    <form>
+        Width:   <input id="width"> <span id="errW"> </span><br>
+        Height: <input id="height"><span id="errH"> </span><br>
+        
+        <br>
+        <input type="button" id="btn" value="Get Area"><br><br>
+        <input type="button" id="btn2" value="clear">
+        
+    </form>
+    
+    <p id="response"> </p>
+
+
+
+</body>
+</html>
