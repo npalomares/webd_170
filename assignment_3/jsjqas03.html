@@ -1,0 +1,128 @@
+<!doctype html>
+<!-- Nicholas Palomares -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+	<title>Javascript Class - 6/29/2016</title>
+
+	<link href="style.css" rel="stylesheet">	
+
+	<script type="text/Javascript">
+
+	// create a clear form function
+	var clear = function() {
+		// Empty out the display IDs
+		document.getElementById("mpg").firstChild.nodeValue = "";
+		document.getElementById("tripCost").firstChild.nodeValue = "";
+
+		// Declare our input variables here
+		var milesDriven = document.getElementById('md');
+		var gallonsUsed = document.getElementById('gu');
+		var ppGallon = document.getElementById('ppg');	
+		
+		// Give them a value of null
+		milesDriven.value = "";
+		gallonsUsed.value = "";
+		ppGallon.value = "";	
+	}
+
+	// create a calculate function
+	var calc = function() {
+
+		//var mpg = 37;
+		// Declare our input variables here
+		var milesDriven = document.getElementById('md');
+		var gallonsUsed = document.getElementById('gu');
+		var ppGallon = document.getElementById('ppg');
+		
+		// Declare our error variables here
+		var errorMD = document.getElementById('errorMD');
+		var errorGU = document.getElementById('errorGU');
+		var errorPPG = document.getElementById('errorPPG');		
+
+		//Clear out the error msgs
+		errorMD.firstChild.nodeValue = " ";
+		errorGU.firstChild.nodeValue = " ";
+		errorPPG.firstChild.nodeValue = " ";
+
+		var isValid = true;
+
+		//Check to see if user input is what we expect
+		if (milesDriven.value <= 0 || isNaN(milesDriven.value)) {
+			// Send Error Message
+			errorMD.firstChild.nodeValue = "Please enter a valid number for Miles Driven";
+			isValid = false;
+		}
+		if (gallonsUsed.value <= 0 || isNaN(gallonsUsed.value)) {
+			// Send Error Message
+			errorGU.firstChild.nodeValue = "Please enter a valid number for Gallons Used";
+			isValid = false;
+		}
+		if (ppGallon.value <= 0 || isNaN(ppGallon.value)) {
+			// Send Error Message
+			errorPPG.firstChild.nodeValue = "Please enter a valid number for Price Per Gallon";
+			isValid = false;
+		}
+
+		//var gallonsUsed = milesDriven.value / mpg;
+		var mpg = milesDriven.value / gallonsUsed.value;
+		var tripCost = 	mpg * ppGallon.value;
+       
+
+        if (isValid) {
+       		document.getElementById('mpg').firstChild.nodeValue = mpg.toFixed(2);
+       		document.getElementById('tripCost').firstChild.nodeValue = "$" + tripCost.toFixed(2);
+        }							
+	}
+	
+
+	// Target our IDs here
+	window.onload = function() {
+		document.getElementById('calc').onclick = calc;
+		console.log(mpg);
+		document.getElementById('clear').onclick = clear;	
+		console.log(tripCost);
+	}
+	</script>	
+</head>
+
+<body>
+<!-- Start our id elements that we target in the head -->
+<div class="container text-center">
+	<h1>JS Class - Assignment Three</h1>
+	<main id="main">
+		<h2>Calculate Miles Per Gallon</h2>
+		<div class="project-info clearfix">	
+			<section class="form-section">
+				<form>
+					<div class="form-component">
+						<label for="">Miles Driven: </label>
+						<input type="text" id="md" name="md" value=""><br />
+						<span class="error" id="errorMD"> </span>
+					</div>
+					<div class="form-component">					
+						<label for="">Gallons Used: </label>					
+						<input type="text" id="gu" name="gu" value=""><br />
+						<span class="error" id="errorGU"> </span>
+					</div>
+					<div class="form-component">						
+						<label for="">Price Per Gallon: </label>
+						<input type="text" id="ppg" name="ppg" value=""><br />
+						<span class="error" id="errorPPG"> </span>
+					</div>
+					<div class="form-component clearfix">											
+						<input class="btn" type="button" id="calc" value="Calculate">
+						<input class="btn" type="button" id="clear" value="Clear">		
+					</div>								
+				</form>
+			</section>
+		</div>
+		<section class="calculations">
+			<h4>Need to calculate these items:</h4>
+			<p>Miles Per Gallon: <span class="answer" id="mpg"> </span></p>
+			<p>The Cost of the Trip: <span class="answer" id="tripCost"> </span></p>
+		</section>					
+	</main>
+</div>
+</body>
+</html>
