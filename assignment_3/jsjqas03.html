@@ -66,7 +66,7 @@
 
 		//var gallonsUsed = milesDriven.value / mpg;
 		var mpg = milesDriven.value / gallonsUsed.value;
-		var tripCost = 	mpg * ppGallon.value;
+		var tripCost = 	gallonsUsed.value * ppGallon.value;
        
 
         if (isValid) {
@@ -91,7 +91,7 @@
 <div class="container text-center">
 	<h1>JS Class - Assignment Three</h1>
 	<main id="main">
-		<h2>Calculate Miles Per Gallon</h2>
+		<h2>Calculate Your MPG: </h2>
 		<div class="project-info clearfix">	
 			<section class="form-section">
 				<form>
@@ -118,7 +118,7 @@
 			</section>
 		</div>
 		<section class="calculations">
-			<h4>Need to calculate these items:</h4>
+			<h4>Your calculations are here: </h4>
 			<p>Miles Per Gallon: <span class="answer" id="mpg"> </span></p>
 			<p>The Cost of the Trip: <span class="answer" id="tripCost"> </span></p>
 		</section>					
