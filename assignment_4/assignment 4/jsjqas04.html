@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- Nicholas Palomares -->     
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSJQ Assignment 4 - Arrays / Date Starter File</title>
+    
+    <link href="style.css" rel="stylesheet">
+    
+    <script>
+    
+        //************************************************************
+        // 1: define variables for today's date,
+        //************************************************************  
+      
+    
+        //************************************************************
+        // 2: define an array to hold the day names 
+        //************************************************************  
+            var sunday = new Date().getDay(0); //"Sunday" 
+            var monday = new Date().getDay(1); //"Monday" 
+            var tuesday = new Date().getDay(2); //"Tuesday"
+            var wednesday = new Date().getDay(3); //"Wednesday"
+            var thursday = new Date().getDay(4); //"Thursday"
+            var friday = new Date().getDay(5); //"Friday"
+            var saturday = new Date().getDay(6); //"Saturday" 
+
+        var days = [sunday, monday, tuesday, wednesday, thursday, friday, saturday];
+    
+        //************************************************************
+        // 3: define an array to hold the daily quotes
+        //************************************************************  
+        var quotes = [
+                "Ability is nothing without opportunity - Napoleon Bonaparte",
+                "Nothing happens unless first we dream - Carl Sandburg",
+                "Believe you can and you're halfway there - Theodore Roosevelt",
+                "A place for everything, everything in its place - Benjamin Franklin",
+                "Don't let the fear of striking out hold you back - Babe Ruth",
+                "We can't help everyone, but everyone can help someone - Ronald Reagan",
+                "With self-discipline most anything is possible - Theodore Roosevelt"
+            ];
+        //************************************************************
+        // 4:  loop through all of the quotes
+        //    and write the quotes to the page. Use DOM methods or innerHTML
+        //    to write to the page.
+        //************************************************************  
+        // for(i=0; i<quotes.length; i++) {
+        //     document.getElementById("quotes").innerHTML = "These are the quotes " + quotes[i];
+        // }
+    
+        //************************************************************
+        // 5: create a window.onload function to format and display
+        //    the current day name.
+        //
+        //    Display the quote for the day.
+        //
+        //    
+        //************************************************************  
+        window.onload = function() {
+            //document.getElementById('calc').onclick = calc;
+            //document.getElementById('clear').onclick = clear;   
+            for(var i=0; i<quotes.length; i++) {
+                document.getElementById("quotes").innerHTML = "These are the quotes " + quotes[i];
+                console.log(quotes[i]);
+            } 
+            for(var j=0; j<days.length; j++) {
+                document.getElementById("days").innerHTML = "These are the days " + days[j];
+                console.log(days[j]);
+            }                        
+        }        
+      
+    </script>
+ 
+<!-- The following are sample quotes. You can use other quotes -->
+<!-- of your choosing if you want to.                          -->
+<!--
+Ability is nothing without opportunity - Napoleon Bonaparte
+Nothing happens unless first we dream - Carl Sandburg
+Believe you can and you're halfway there - Theodore Roosevelt
+A place for everything, everything in its place - Benjamin Franklin
+Don't let the fear of striking out hold you back - Babe Ruth
+We can't help everyone, but everyone can help someone - Ronald Reagan
+With self-discipline most anything is possible - Theodore Roosevelt
+-->
+    
+</head>
+
+<body>
+<!-- Start our id elements that we target in the head -->
+<div class="container text-center">
+    <main id="main">
+        <h1>Quote of the Day</h1>
+        <div class="project-info clearfix"> 
+            <section class="quote-section">
+                <div id="quotes"> </div>
+                <div id="days"> </div> 
+            </section>
+        </div>
+          
+    </main>
+</div>    
+
+</body>
+</html>
