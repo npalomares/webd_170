@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+    File 07_firstChild_nextElementSibling_form_validation.html
+	
+    This page shows how to use the firstChild and
+    nextElementSibiling node interfaces
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form Validation using firstChild and nextElementSibling</title>
+
+    <style>
+       .error {color: red;}
+       h3 {color: blue;}
+    </style>
+
+    <script>
+        function validate() {
+    
+            // clear out the error message, if messages are shown up one at a time
+            var errorMsg = document.getElementsByClassName("error");
+     
+            for (var x = 0; x < errorMsg.length; x++) {
+                errorMsg[x].firstChild.nodeValue = "";  // sets all error messages to nothing
+            }
+    
+            var allValid = true;
+     
+            // get references to the form elements
+            var firstName = document.getElementById('first_name');
+            var lastName  = document.getElementById('last_name');
+            var email1    = document.getElementById('email1');
+            var email2    = document.getElementById('email2');
+        
+            // validate the first name
+            if (firstName.value == "") {
+                firstName.nextElementSibling.firstChild.nodeValue = "please enter your first name";
+                firstName.focus();
+      
+                allValid = false; 
+            }
+    
+            // validate last name
+            if (lastName.value == "") {
+                lastName.nextElementSibling.firstChild.nodeValue = "please enter your last name";
+            
+                // test allValid - do not set focus for this form element
+                // if there is a previous validation error
+                if (allValid) {
+                    lastName.focus();
+                }
+      
+                allValid = false;
+            }
+  
+            // validate email 1
+            if (email1.value == "") {
+                email1.nextElementSibling.firstChild.nodeValue = "please enter your email address";
+               
+                if (allValid) {
+                    email1.focus();
+                }
+               
+                allValid = false;
+            }
+   
+            // validate email 2
+            if (email2.value == "") {
+                email2.nextElementSibling.firstChild.nodeValue = "please confirm your email address";
+              
+                if (allValid) {
+                    email2.focus();
+                }
+      
+                allValid = false;
+            }
+     
+            // check for matching emails
+            if (email1.value !== email2.value) {
+                email2.nextElementSibling.firstChild.nodeValue = "both email addresses must match";
+                allValid = false;
+            }   
+     
+            if (allValid) { 
+                return true;  // function is finished and action is called
+            }
+            else {
+                return false; // do not call action as there is a problem
+            }
+        }
+
+        function init(){
+            document.getElementById('myForm').onsubmit = validate;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <h1>Subscribe to Our Newsletter</h1>
+    <h2>Please fill in all of the fields to be added to our mailing list</h2>
+    <h3 style="color: red">All fields are required!</h3>
+
+    <form id="myForm" action="javascript: alert('Form is Submitted')" method="post">
+        <!-- can use &nbsp; inside span      -->
+        <!-- must have something inside span -->
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name">
+        <span class="error">&nbsp;</span>
+        <br>
+        <br>
+    
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name">
+        <span class="error">&nbsp;</span>
+        <br>
+        <br>
+    
+        <!-- can use a blank space inside span -->
+        <!-- must have something inside span   -->
+        <label for="email">Email Address:</label>
+        <input type="text" name="email1" id="email1">
+        <span class="error"> </span>
+        <br>
+        <br>
+    
+        <label for="email2">Please Retype Email Address:</label>
+        <input type="text" name="email2" id="email2">
+        <span class="error"> </span>
+        <br>
+        <br> 
+    
+        <input type="submit" value="Submit the Form" id="btn">
+        <br>
+        <br>
+      
+        <input type="reset" value="Clear Form"> 
+    </form>
+
+    <h3>This example demonstrates the application of firstChild and nextElementSibling
+        node interfaces on page 161
+    </h3>
+
+    <p>
+      In this example, we are submitting a form using input type="submit"
+      which calls the "action". We need to use "return false" to keep the form
+      from being submitted until it is filled out correctly.
+    </p>
+</body>
+</html>

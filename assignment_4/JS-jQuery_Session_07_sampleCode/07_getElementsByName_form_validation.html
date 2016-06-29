@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+    File 07_getElementsByName_form_validation.html
+	
+    This page shows how to use the getElementsByName method
+    to validate a radio button group.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Validate a radio button group</title>
+
+    <style>
+        .error {color: red;}
+    </style>
+
+    <script>
+        // clear the error message
+        function clear() {
+            document.getElementById('error').firstChild.nodeValue = "";
+        }
+
+        // check for a "title" selection
+        function validate() {
+    
+            clear();
+            
+            var titles = document.getElementsByName('title');
+            var titleOK = false;
+          
+            // the element is an array so we need a loop
+            // determine if any title was checked
+            for (var i = 0; i < titles.length; i++) {
+      
+                if ((titles[i]).checked) {
+                    titleOK = true;
+                }
+            } 
+
+            if (!titleOK) {
+                document.getElementById('error').firstChild.nodeValue = "Please enter your title";
+                return false; // stops the function
+            }
+        
+            return true; // function is finished and form is submitted
+        }
+
+        function init() {
+            document.getElementById('myForm').onsubmit = validate;
+            reset.onclick = clear;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <h1>Subscribe to Our Newsletter</h1>
+    <h2>Please fill in all of the fields to be added to our mailing list</h2>
+    <h3 style="color: red">All fields are required!</h3>
+
+    <form id="myForm" action="javascript: alert('Form is Submitted')" method="post">
+        Please enter your title: &nbsp; <span class="error" id="error">&nbsp;</span>
+        <br>
+
+        <label for="mr">Mr:</label>
+        <input type="radio" name="title" id="mr" value="mr">
+        <br>
+    
+        <label for="mrs">Mrs:</label>
+        <input type="radio" name="title" id="mrs" value="mrs">
+        <br>
+    
+        <label for="ms">Ms:</label>
+        <input type="radio" name="title" id="ms" value="ms">
+        <br>
+    
+        <input type="submit" value="Submit the Form" id="btn">
+        <br>
+        <br>
+      
+        <input type="reset" value="Clear Form" id="reset"> 
+    </form>
+</body>
+</html>

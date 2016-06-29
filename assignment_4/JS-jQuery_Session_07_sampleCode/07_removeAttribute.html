@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+    File 07_removeAttribute.html
+	
+    This page shows how to use the removeAttribute method.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demonstrates removeAttribute</title>
+
+    <style>
+	.green {color: green;}
+	.red   {color: red;}
+	.blue  {color: blue;}
+    </style>
+  
+    <script>
+        function process() {
+            var theDog = document.getElementsByClassName("red")[0]; //get the first span
+            theDog.removeAttribute("class");
+        } 
+
+        window.onload = function() {
+            document.getElementById('btn').onclick = process;
+        }
+</script>
+</head>
+
+<body>
+    <form>
+        <p>What is your favorite type of pet?</p>
+ 
+        <span class="green">Cats</span>
+        <br>
+  
+        <span class="blue">Birds</span>
+        <br>  
+  
+        <span class="red">Dogs</span>
+        <br>
+  
+        <span class="red">Collies</span>
+        <br>  
+        <br>
+
+        <input type="button" id="btn" value="Removes the 'class' attribute in the span around 'Dog'. ">
+    </form>
+</body>
+</html>

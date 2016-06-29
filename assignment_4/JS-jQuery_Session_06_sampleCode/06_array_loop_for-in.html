@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+    File 06_array_loop_for-in.html
+	
+    This page shows how to use the for-in
+	loop construct with an array.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Loop through an array using for-in</title>
+
+    <script>
+        var myArray = new Array();
+
+        myArray[0] = "apples";
+        myArray[1] = "oranges";
+        myArray[2] = "pears";
+        myArray[3] = "peaches";
+
+	    for (var i in myArray)
+ 	    {
+    	    alert ("value of i: " + i + " | value of myArray[i]: " + myArray[i]);
+  	    }
+</script>
+</head>
+
+<body>
+    <h2>the for-in loop is the same as a for loop except that the syntax is simpler - pg 149
+         <br>
+          <pre>  
+          for (var someIndex in someArrayName){
+             // code to be executed
+           }
+          </pre> 
+    </h2>
+</body>
+</html>

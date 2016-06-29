@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+    File 07_getElementsByName.html
+	
+    This page shows how to use the getElementsByName method.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demonstrates getElementsByName</title>
+    
+        <style>
+	.green {color: green;}
+	.red   {color: red;}
+	.blue  {color: blue;}
+	.black {color: black;}
+    </style>
+	
+  
+    <script>
+        function process() {
+
+            // determine how many elements
+            var thePets = document.getElementsByName("pets");
+            alert("There are " + thePets.length + " elements wiith name=pets");
+
+            // show the values of those elements -  use[i] because it is an array
+            for (var i = 0; i < document.getElementsByName("pets").length; i++) {
+                alert("This element has name=pets: " + document.getElementsByName("pets")[i].value);
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById('btn').onclick = process;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <p>What is your favorite type of pet?</p>
+ 
+        <span class="green">Cats</span><input name="pets" type="radio" value="Cats">
+        <br>
+  
+        <span class="blue">Birds</span><input name="pets" type="radio" value="Birds">
+        <br>  
+  
+        <span class="red">Dogs</span><input name="pets" type="radio" value="Dogs">
+        <br>
+  
+        <span class="black">Collies</span><input name="pets" type="radio" value="Collies">
+        <br>  
+        <br>
+
+        <input type="button" id="btn" value="How many elements with the attribute name value of 'pets'?">
+     </form>
+</body>
+</html>

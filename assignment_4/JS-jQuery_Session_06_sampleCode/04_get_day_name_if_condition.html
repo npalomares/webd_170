@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+    File 04_get_day_name_if_condition.html
+	
+    This page shows how to get the day name,
+	using a series of if/else if statements.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Get the day of the week using an if condition</title>	
+	
+	<script>
+
+        var dayName; 	
+	
+        // get the zero-based day-of-the-week
+        var theDay = new Date().getDay(); 
+	
+        // use if/else if statements instead of an array
+		// to get the name of the day
+        if     (theDay == 0) { dayName = "Sunday";    }
+        else if(theDay == 1) { dayName = "Monday";    }
+        else if(theDay == 2) { dayName = "Tuesday";   }
+        else if(theDay == 3) { dayName = "Wednesday"; }
+        else if(theDay == 4) { dayName = "Thursday";  }
+        else if(theDay == 5) { dayName = "Friday";    }
+        else if(theDay == 6) { dayName = "Saturday";  }
+	
+        alert("The day number is " + theDay + "\n" +
+			  "The day name is " + dayName);
+	</script>
+</head>
+
+<body>
+    <h2>Get the day name, using an if/else if series</h2>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+    File 06_array_simple.html
+	
+    This page shows how to create and initialize
+    an array.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Create/initialize an array</title>
+    <script>
+        var myArray = new Array();
+
+        myArray[0] = "apples";
+        myArray[1] = "oranges";
+        myArray[2] = "pears";
+        myArray[3] = "peaches";
+
+        window.onload = function() {
+            document.getElementById("thelength").firstChild.nodeValue = myArray.length;
+            document.getElementById("array0").firstChild.nodeValue  = myArray[0];
+            document.getElementById("array1").firstChild.nodeValue  = myArray[1];
+            document.getElementById("array2").firstChild.nodeValue  = myArray[2];
+            document.getElementById("array3").firstChild.nodeValue  = myArray[3];
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Typical way of creating an array - pg 143
+    <br>
+        The brackets [ ] indicate an array!
+        <br><br> Note this uses the "new" constructor      
+    </h1>
+    
+    <h2>The array elements are shown on the page</h2>
+
+    <p>The length of myArray is <span id="thelength"> </span></p>
+
+    <p>myArray[0] is <span id="array0"> </span></p>
+    <p>myArray[1] is <span id="array1"> </span></p>
+    <p>myArray[2] is <span id="array2"> </span></p>
+    <p>myArray[3] is <span id="array3"> </span></p>
+</body>
+</html>

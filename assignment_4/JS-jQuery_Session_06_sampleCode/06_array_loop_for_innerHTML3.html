@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+    File 06_array_loop_for_innerHTML3.html
+	
+    This page shows how to use a for loop
+	to loop through an array and build a string to write to the page using innerHTML
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Loop through an array and building a string - writing to page using innerHTML</title>
+
+    <script>
+        var myArray = new Array();
+
+        myArray[0] = "apples";
+        myArray[1] = "oranges";
+        myArray[2] = "pears";
+        myArray[3] = "peaches";
+
+       
+       window.onload = function(){
+	
+	var str = "<h2>The fruits are:</h2>";
+	
+	var str2 = " "; 
+	
+        for (var i = 0; i < myArray.length; i++)
+           {
+    	    str2 += "<li>" + myArray[i] + "</li>";
+  	   }
+	   
+	document.getElementById("array").innerHTML = str + "<ul>" + str2 + "</ul>";
+	
+       }  //  end onload  
+</script>
+</head>
+
+<body>
+    <h2>using a for loop with an array and "building a string" -  writing to page using innerHTML</h2>
+    
+    <h3>you cannot do this using firstChild.nodeValue because you cannot concatenate a string and an element node, but you can using innerHTML, as innerHTML includes both text and elements</h3>
+    
+    <p id="array"> </p>
+</body>
+</html>

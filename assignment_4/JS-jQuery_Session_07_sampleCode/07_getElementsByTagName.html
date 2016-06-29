@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+    File 07_getElementsByTagName.html
+	
+    This page shows how to use the getElementsByTagName method.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demonstrates getElementsByTagName</title>
+  
+    <script>
+        function process() {
+
+            // determine how many elements
+            var theInputs = document.getElementsByTagName("input");
+            alert("There are " + theInputs.length + " input elements");
+
+            // show the values of those elements using an array
+            for (var i = 0; i < document.getElementsByTagName("input").length; i++) {
+                alert("This is the value of an input element: " + document.getElementsByTagName("input")[i].value);
+            }
+        } 
+
+        window.onload = function() {
+            document.getElementById('btn').onclick = process;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <p>What is your favorite type of pet?</p>
+ 
+        <span class="green">Cats</span><input name="pets" type="radio" value="Cats">
+        <br>
+  
+        <span class="blue">Birds</span><input name="pets" type="radio" value="Birds">
+        <br>  
+  
+        <span class="red">Dogs</span><input name="pets" type="radio" value="Dogs">
+        <br>
+  
+        <span class="red">Collies</span><input name="pets" type="radio" value="Collies">
+        <br>  
+        <br>
+
+        <input type="button" id="btn" value="How many elements with the name value of 'input'?">
+    </form>
+</body>
+</html>

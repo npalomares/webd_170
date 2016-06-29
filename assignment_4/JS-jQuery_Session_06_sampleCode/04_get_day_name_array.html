@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+    File 04_get_day_name_array.html
+	
+    This page shows how to get the day name,
+	using an array of day names.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Get the day of the week using an array</title>
+	
+	<script>
+        var today = new Date();
+
+        // returns the zero-based day-of-the-week number
+        var theDay = today.getDay() 
+
+        // use that number as the array index to get its value
+        var days = new Array();
+        days[0] = "Sunday" ;
+        days[1] = "Monday" ;	
+        days[2] = "Tuesday" ;
+        days[3] = "Wednesday" ;	
+        days[4] = "Thursday" ;	
+        days[5] = "Friday" ;	
+        days[6] = "Saturday" ;	
+	  
+        alert("The day-of-the-week is " + theDay + "\n" +
+              "The day is " + days[theDay]);
+    </script>	
+</head>
+
+<body>
+    <h2>Get the day name, using an array of day names</h2>
+</body>
+</html>

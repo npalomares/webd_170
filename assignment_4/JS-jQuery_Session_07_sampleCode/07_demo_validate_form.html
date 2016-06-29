@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+    File 07_validate_form.html
+	
+    This page shows how to use properties and methods of the DOM
+    to validate a form:
+     - getElementsByClassName()
+     - getElementsByTagName()
+     - nextElementSibling
+     - firstElementChild
+     - addEventListener()
+-->
+<htmL>
+<head>
+    <meta charset="utf-8">
+    <title>Validate Form using DOM</title>
+    <style>
+        .err {color: red; font-style: italic;}
+    </style>
+    
+<script>
+    function calculateArea(){
+        //alert('function called');
+        
+       // clear out error messages - can also do this using a tag name
+         for (var i = 0; i < document.getElementsByClassName('err').length; i++){
+              document.getElementsByClassName('err')[i].firstChild.nodeValue = "";
+         }
+        
+        var theWidth  = document.getElementById('width');
+        var theHeight = document.getElementById('height');
+	
+	var theWidthValue  = theWidth.value;
+	var theHeightValue = theHeight.value;
+               
+        if(theWidthValue <=0 || isNaN(theWidthValue) ){
+           theWidth.nextElementSibling.firstChild.nodeValue = 
+           "Please enter a valid number for the width";
+           theWidth.focus(); 
+              
+        }   
+        
+       else if(theHeightValue <=0 || isNaN(theHeightValue) ){
+               theHeight.nextElementSibling.firstChild.nodeValue = 
+               "Please enter a valid number for the height";
+               theHeight.focus(); 
+        } 
+        
+        else {    
+        var theArea = theWidthValue * theHeightValue;
+        document.getElementById('result').firstElementChild.firstChild.nodeValue = 
+         "The result is " + theArea;
+        }    
+    } // end calculateArea function
+    
+	
+    function clearForm() {
+        //alert("clear form");
+	
+       // clear out form values
+         for (var i = 0; i < document.getElementsByTagName('input').length; i++){
+              document.getElementsByTagName('input')[i].value = "";
+         }
+ 
+        // clear out result
+	document.getElementById('result').firstElementChild.firstChild.nodeValue = "";
+    } // end clearForm function
+    
+    
+    window.onload = function(){
+     //document.getElementById('btnCalc').onclick = calculateArea;
+     document.getElementById('btnCalc').addEventListener('click', calculateArea);
+     
+     //document.getElementById('btnClear').onclick = clearForm;
+     document.getElementById('btnClear').addEventListener('click', clearForm);
+    } // end onload function
+    
+</script>    
+    
+</head>    
+    
+<body>
+    <h1>This form uses various DOM properties and methods to validate the form</h1>
+    
+ <form>
+    
+  <label for="width">Width:</label>
+  <input id="width"> <span class="err"> </span>
+  <br>
+  <br>  
+   
+  <label for="height">Height:</label>
+  <input id="height"> <span class="err"> </span>
+  <br>
+  <br>
+     
+  <button type="button" id="btnCalc">Calculate Area</button>
+  <br>
+  <br>
+  <button type="button" id="btnClear">Clear Form</button>    
+    
+</form>   
+    
+    <p id="result"><b> </b></p>
+    
+    
+</body>    
+
+
+</htmL>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQs</title>
+    
+  <style>   
+    /* type selectors */
+    article, aside, figure, figcaption, footer, header, nav, section {
+      display: block;
+    }
+	
+    * {
+	  margin: 0;
+	  padding: 0;
+    }
+	
+    body {
+	  font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 87.5%;
+	  width: 650px;
+	  margin: 0 auto;
+	  border: 3px solid blue;
+    }
+	
+    section {
+	  padding: 15px 25px;
+    }
+	
+    h1 { 
+	  font-size: 150%;
+    }
+	
+    h2 {
+	  font-size: 120%;
+	  padding: .25em 0 .25em 25px;
+	  cursor: pointer;
+    }
+	
+    h2.plus {
+	  background: url(plus.png) no-repeat left center;
+    }
+	
+    h2.minus {
+	  background: url(minus.png) no-repeat left center;
+    }
+	
+    ul {
+	  padding-left: 45px;
+    }
+	
+    li {
+	  padding-bottom: .25em;
+    }
+	
+    p {
+	  padding-bottom: .25em;
+	  padding-left: 25px;
+    }
+	
+    div.closed {
+	  display: none;
+    }
+	
+    div.open {
+	  display: block;
+    }
+  </style>
+
+  <script>
+    window.onload = function () {
+      var faqs = $("faqs");
+      var h2Elements = faqs.getElementsByTagName("h2");
+    		    
+      var h2Node;
+	  
+      for (var i = 0; i < h2Elements.length; i++ ) {
+    	h2Node = h2Elements[i];
+    	
+    	// Attach event handler
+    	h2Node.onclick = function () {
+    	  var h2 = this;         // h2 is the current h2Node object
+    		
+    	  if (h2.getAttribute("class") == "plus") {
+    	    h2.setAttribute("class", "minus");	
+    	  }
+    	  else {
+    	    h2.setAttribute("class", "plus");
+    	  }
+    	
+		  if (h2.nextElementSibling.getAttribute("class") == "closed") {
+    	    h2.nextElementSibling.setAttribute("class", "open");
+    	  }
+    	  else {
+    	    h2.nextElementSibling.setAttribute("class", "closed");
+    	  }
+		}
+	  }
+    }
+
+    var $ = function (id) {
+	  return document.getElementById(id);
+    }  
+  </script>
+</head>
+
+<body>
+	<section id="faqs">
+		<h1>jQuery FAQs</h1>
+		
+		<h2 class="plus">What is jQuery?</h2>
+
+		<div class="closed">
+			<p>jQuery is a library of the JavaScript functions that you're most likely 
+			   to need as you develop web sites.
+			</p>
+		</div>
+
+		<h2 class="plus">Why is jQuery becoming so popular?</h2>
+
+		<div class="closed">
+			<p>Three reasons:</p>
+			<ul>
+				<li>It's free.</li>
+				<li>It lets you get more done in less time.</li>
+				<li>All of its functions are cross-browser compatible.</li>
+			</ul>
+		</div>
+
+		<h2 class="plus">Which is harder to learn: jQuery or JavaScript?</h2>
+
+		<div class="closed">
+			<p>For most functions, jQuery is significantly easier to learn 
+			    and use than JavaScript. But remember that jQuery is JavaScript.
+			</p>
+		</div>
+	</section>
+</body>
+</html>

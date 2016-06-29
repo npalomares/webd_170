@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+    File 06_array_shift.html
+	
+    This page shows how to use the shift method
+    of an Array object to remove the first
+    element of the array.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>shift an array</title>
+
+    <script>
+        var myArray = new Array();
+
+        myArray[0] = "apples";
+        myArray[1] = "oranges";
+        myArray[2] = "pears";
+        myArray[3] = "peaches";
+
+        alert("myArray before the shift: " + myArray + "\n" +
+              "myArray.length before the shift: " + myArray.length);
+
+        myArray.shift();  // removes first element the array
+
+        alert("myArray after the shift: " + myArray + "\n" +
+              "myArray.length after the shift: " + myArray.length);
+    </script>
+</head>
+
+<body>
+    <h2>shift - removes the first element in the array - pg 151</h2>
+</body>
+</html>

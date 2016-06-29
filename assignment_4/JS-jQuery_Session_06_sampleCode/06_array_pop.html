@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+    File 06_array_pop.html
+	
+    This page shows how to use the pop method
+    of an Array object to remove the last
+    element of the array.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>pop an array</title>
+
+    <script>
+        var myArray = new Array();
+
+        myArray[0] = "apples";
+        myArray[1] = "oranges";
+        myArray[2] = "pears";
+        myArray[3] = "peaches";
+
+        alert("myArray before the pop: " + myArray + "\n" +
+              "myArray.length before the pop: " + myArray.length);
+        
+        myArray.pop();  // removes last element the array
+        
+        alert("myArray after the pop: " + myArray + "\n" +
+              "myArray.length after the pop: " + myArray.length);
+    </script>
+</head>
+
+<body>
+    <h2>pop - removes the last element in the array - pg 151</h2>
+</body>
+</html>

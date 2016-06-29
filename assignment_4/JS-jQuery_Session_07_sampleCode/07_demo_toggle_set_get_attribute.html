@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+    File 07_demo_toggle_set_getAttribute.html
+	
+    This page shows how to use the getAttribute and setAttribute method to create a toggle.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demonstrates setAttribute</title>
+
+    <style>
+	.open  {display: block;}
+	.close {display: none;}
+	h3     {cursor: pointer;}
+    </style>
+  
+    <script>
+        window.onload = function() {
+	   
+	   // access all div elements
+	   var theDiv = document.getElementsByTagName('div');
+            
+	    // set attribute for all div elements
+	    for(var i=0; i<theDiv.length; i++){
+		theDiv[i].setAttribute("class", "close");
+	    }
+	    
+	    // access all h3 elements
+	    var theH3 = document.getElementsByTagName('h3');
+	    
+	    // execute code depending on which h3 is clicked
+	    for(var i = 0; i<theH3.length; i++){
+	    
+	       var thisH3 = theH3[i]; // sets up the h3 that is clicked on
+	     
+	       thisH3.onclick = function(){
+		//alert('clicked');
+		if(this.nextElementSibling.getAttribute("class")=="close"){
+		   this.nextElementSibling.setAttribute("class", "open");
+		}
+		else{
+		   this.nextElementSibling.setAttribute("class", "close"); 
+		}
+		
+	       }// end function
+	    }// end for loop
+        }// end onload
+    </script>
+</head>
+
+<body>
+    <h1>This page shows how to use the getAttribute and setAttribute method to create a toggle</h1>
+ 
+    <h2>Click the question to hide and show the answer below</h2>
+    
+    <h3>What is a Collie?</h3>
+    <div>
+	The Rough Collie is a long coated breed of medium to large size dog that in its original form
+	was a type of collie used and bred for herding in Scotland.
+    </div>
+    
+    <h3>What is a Border Collie?</h3>
+    <div>
+	The Border Collie is a working and herding dog breed developed in the Anglo-Scottish border region for
+	herding livestock, especially sheep. It was specifically bred for intelligence and obedience
+    </div>
+	
+	
+</body>
+</html>

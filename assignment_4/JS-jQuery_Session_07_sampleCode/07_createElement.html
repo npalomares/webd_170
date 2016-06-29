@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+    File 07_createElement.html
+	
+    This page shows how to create HTML elements
+    using the DOM
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Create Element with DOM</title>
+  
+    <script>
+        function addElement () {
+          
+            // create a new <b> element
+            var newB = document.createElement("b");
+   
+            // create a text node with content
+            var newContent = document.createTextNode("Hello from a new b!");
+
+            // add the text node to the newly created <b>
+           newB.appendChild(newContent); 
+  
+            // add the newly created element and its content into the DOM
+            thePara = document.getElementById("para");
+            thePara.appendChild(newB);
+        }
+
+        window.onload = function() {
+            document.getElementById('btn').onclick = addElement;
+        }
+    </script>
+</head>
+
+<body>
+    
+    <p id="para">Add an element to the page (DOM Tree) inside this paragraph - </p>
+    
+    
+    <form>
+        <input type="button" id="btn" value="Click to add new element">
+    </form>
+</body>
+</html>

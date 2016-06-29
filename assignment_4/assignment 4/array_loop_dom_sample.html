@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+    File 07_array_loop_dom_sample.html
+	
+    This page shows how to loop through an array
+    and build a string expression using the DOM
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Array Loop DOM Sample</title>
+    
+    <script>
+	
+	var myArray = new Array();
+	
+	myArray[0] = "Missy";
+	myArray[1] = "Daisy";
+	myArray[2] = "Andy";
+	myArray[3] = "Letty";
+	
+	
+        window.onload = function() {
+      
+            var myPara  = document.getElementById('para');
+	               
+        
+            // loop through the array  - create elements, nodes, append them 
+            for (var i = 0; i < myArray.length; i++) {
+
+                var text = document.createTextNode(myArray[i]);
+                var br   = document.createElement('br');
+                
+                myPara.appendChild(text);
+                myPara.appendChild(br);
+            }
+	    
+
+        } 
+    </script>
+</head>
+
+<body>
+    <h1>Demonstration: How to Loop through an Array using the DOM methods and properties</h1>
+
+   <h2>My Dogs are:</h2>
+   
+    <p id="para">   </p>
+
+    
+
+
+</body>
+</html>

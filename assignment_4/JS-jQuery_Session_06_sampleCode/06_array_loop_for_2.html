@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+    File 06_array_loop_for_2.html
+	
+    This page shows how to use a for loop
+	to loop through an array and build a
+	string of the array elements.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Loop through an array, build a string</title>
+
+    <script>
+        var myArray = new Array();
+
+        myArray[0] = "apples";
+        myArray[1] = "oranges";
+        myArray[2] = "pears";
+        myArray[3] = "peaches";
+
+        var allArrayElements = "";  // set it to am empty string 
+
+        for (var i = 0; i < myArray.length; i++)
+        {
+		    // concatenate each array element to the string
+            allArrayElements += myArray[i] + " "; 
+		}
+        
+        alert ("all of the array elements as a string: " + allArrayElements);
+         
+        window.onload = function() {
+            document.getElementById("values").firstChild.nodeValue = allArrayElements;
+		}
+    </script>
+</head>
+
+<body>
+    <h2>Loop through the array, on each iteration, contanate
+	    the current array element to the string - page 147
+    </h2>
+
+    <p>All of the values are: <span id="values"> </span></p>
+</body>
+</html>

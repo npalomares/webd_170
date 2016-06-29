@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+    File 07_node_properties.html
+	
+    This page shows how to use DOM node properties
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ch 6 - DOM node properties - page 161</title>  
+    
+    <script>
+        function init() {
+  
+            alert("node name for id='xyz' is: " +
+                document.getElementById('xyz').nodeName);
+    
+            alert("node value for first child node is: " +
+                document.getElementById('xyz').firstChild.nodeValue);
+   
+            alert("node name for last child node is: " +
+                document.getElementById('xyz').lastChild.nodeName);
+   
+            alert("node value for last child node is null because it is an element <b> and contains no content - the text inside the <b> is the firstChild of that <b> " +
+                document.getElementById('xyz').lastChild.nodeValue);
+   
+            alert("node value for next element sibling is: " +
+                document.getElementById('xyz').nextElementSibling.firstChild.nodeValue);
+        }  
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+  <h1>Retrieve node value and node name</h1>
+  <p id="xyz">test <b>here</b></p>
+  <p>I am the next element sibling</p>
+</body>
+</html>

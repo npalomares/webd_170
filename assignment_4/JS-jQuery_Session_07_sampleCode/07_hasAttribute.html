@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+    File 07_hasAttribute.html
+	
+    This page shows how to use the hasAttribute property.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demonstrates hasAttribute</title>
+  
+    <script>
+        function process() {
+
+            var theDog = document.getElementsByClassName("red")[0]; //get the first span
+ 
+            if (theDog.hasAttribute("class")) {
+                alert("True! It has the 'class' attribute")
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById('btn').onclick = process;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <p>What is your favorite type of pet?</p>
+ 
+        <span class="green">Cats</span><input name="pets" type="radio" value="Cats">
+        <br>
+  
+        <span class="blue">Birds</span><input name="pets" type="radio" value="Birds">
+        <br>  
+  
+        <span class="red">Dogs</span><input name="pets" type="radio" value="Dogs">
+        <br>
+  
+        <span class="red">Collies</span><input name="pets" type="radio" value="Collies">
+        <br>  
+        <br>
+
+        <input type="button" id="btn" value="Does the element enclosing 'Dog' have an attribute?">
+    </form>
+</body>
+</html>

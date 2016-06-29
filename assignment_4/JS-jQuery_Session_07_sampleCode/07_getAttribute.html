@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+    File 07_getAttribute.html
+	
+    This page shows how to use the getAttribute method.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demonstrates getAttribute</title>
+    
+    <style>
+	.green {color: green;}
+	.red   {color: red;}
+	.blue  {color: blue;}
+	.black {color: black;}
+    </style>
+  
+    <script>
+        function process() {
+
+            var theDog = document.getElementsByClassName("red")[0]; //get the first span
+            var theDogAttribute = theDog.getAttribute('class');
+
+            alert("The attribute value is " + theDogAttribute);
+        } 
+
+        window.onload = function() {
+            document.getElementById('btn').onclick = process;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <p>What is your favorite type of pet?</p>
+ 
+        <span class="green">Cats</span>
+        <br>
+  
+        <span class="blue">Birds</span>
+        <br>  
+  
+        <span class="red">Dogs</span>
+        <br>
+  
+        <span class="black">Collies</span>
+        <br>  
+        <br>
+
+        <input type="button" id="btn" value="Return the value of the attribute in the span around 'Dog' ">
+    </form>
+</body>
+</html>
