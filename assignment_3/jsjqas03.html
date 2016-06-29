@@ -48,22 +48,33 @@
 		var isValid = true;
 
 		//Check to see if user input is what we expect
-		if (milesDriven.value <= 0 || isNaN(milesDriven.value)) {
+		if (milesDriven.value <= 0) {
+			// Send Error Message
+			errorMD.firstChild.nodeValue = "Please enter a number greater than 0 for Miles Driven";
+			isValid = false;
+		} else if (isNaN(milesDriven.value)) {
 			// Send Error Message
 			errorMD.firstChild.nodeValue = "Please enter a valid number for Miles Driven";
 			isValid = false;
 		}
-		if (gallonsUsed.value <= 0 || isNaN(gallonsUsed.value)) {
+		if (gallonsUsed.value <= 0) {
+			// Send Error Message
+			errorGU.firstChild.nodeValue = "Please enter a number greater than 0 for Gallons Used";
+			isValid = false;
+		} else if (isNaN(gallonsUsed.value)) {
 			// Send Error Message
 			errorGU.firstChild.nodeValue = "Please enter a valid number for Gallons Used";
 			isValid = false;
 		}
-		if (ppGallon.value <= 0 || isNaN(ppGallon.value)) {
+		if (ppGallon.value <= 0) {
+			// Send Error Message
+			errorPPG.firstChild.nodeValue = "Please enter a number greater than 0 for Price Per Gallon";
+			isValid = false;
+		} else if (isNaN(ppGallon.value)) {
 			// Send Error Message
 			errorPPG.firstChild.nodeValue = "Please enter a valid number for Price Per Gallon";
 			isValid = false;
 		}
-
 		//var gallonsUsed = milesDriven.value / mpg;
 		var mpg = milesDriven.value / gallonsUsed.value;
 		var tripCost = 	gallonsUsed.value * ppGallon.value;
