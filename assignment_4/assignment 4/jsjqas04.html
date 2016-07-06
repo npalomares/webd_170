@@ -11,22 +11,22 @@
     
         //************************************************************
         // 1: define variables for today's date,
-        //************************************************************  
-      
-    
+        //************************************************************        
+        var today = new Date();
+        var weekday = today.getDay();;
+
+
         //************************************************************
         // 2: define an array to hold the day names 
         //************************************************************  
-        var d = new Date();
-        var weekday = [];
-        
-        weekday[0] = 'sunday'; 
-        weekday[1] = 'monday'; 
-        weekday[2] = 'tuesday'; 
-        weekday[3] = 'wednesday'; 
-        weekday[4] = 'thursday'; 
-        weekday[5] = 'friday'; 
-        weekday[6] = 'saturday'; 
+        var days = [];  
+        days[0] = 'Sunday';
+        days[1] = 'Monday';
+        days[2] = 'Tuesday';
+        days[3] = 'Wednesday';
+        days[4] = 'Thurday';
+        days[5] = 'Friday';
+        days[6] = 'Saturday';
 
     
         //************************************************************
@@ -41,49 +41,43 @@
                 "We can't help everyone, but everyone can help someone - Ronald Reagan",
                 "With self-discipline most anything is possible - Theodore Roosevelt"
             ];
-        //************************************************************
-        // 4:  loop through all of the quotes
-        //    and write the quotes to the page. Use DOM methods or innerHTML
-        //    to write to the page.
-        //************************************************************  
-        // for(i=0; i<quotes.length; i++) {
-        //     document.getElementById("quotes").innerHTML = "These are the quotes " + quotes[i];
-        // }
-    
-        //************************************************************
-        // 5: create a window.onload function to format and display
-        //    the current day name.
-        //
-        //    Display the quote for the day.
-        //
-        //    
-        //************************************************************  
-        window.onload = function() {
-            //document.getElementById('calc').onclick = calc;
-            //document.getElementById('clear').onclick = clear;   
-            for( var i = 0; i < weekday.length; i++ ) {
-                console.log(weekday[i]);
 
-                // You can't loop through
-                document.getElementById("days").innerHTML = "<li>" + weekday[i] + "</li>";
-            }                   
+        var authors = [];
+        var splitQuote = " ";
+        for(var j = 0; j<quotes.length; j++) {
+            //var authors = 'these are neat ' + quotes[j];
+            var authors = quotes[j].split(/ - /);
+            var blockquote = authors[0];
+            var person = authors[1];
+            splitQuote += "who said it - " + person + " what was said - " + blockquote;
+            console.log(splitQuote);
+        }            
+
+        // Loop through all the days and add a span with class
+        var allDays = " ";
+        for(var i=0; i < days.length; i++) {
+            allDays += '<span class="day">' + days[i] + ' - </span>';
+        }
+
+        // Loop through all the quotes and add a span with class
+        var allQuotes = " ";
+        for(var i=0; i < quotes.length; i++) {
+            allQuotes += '<span class="quote">' + quotes[i] + '</span>';
+        }        
+
+        //onLoad function to target IDs
+        window.onload = function() {
+            document.getElementById("days").innerHTML = '<span class="text">Today is..</span><br /><h4 class="fullQuote">' + days[weekday] + '</h4>';            
+            document.getElementById("quotes").innerHTML = '<span class="text">Which means our quote is...</span><br />' + 
+                                                          '<h4 class="fullQuote">' + blockquote + '</h4>' + '<h5> - ' + person + '</h5';            
+
+            document.getElementById("allQuotes").innerHTML = allQuotes;
+            document.getElementById("allDays").innerHTML = allDays;            
         }        
       
 
 
     </script>
- 
-<!-- The following are sample quotes. You can use other quotes -->
-<!-- of your choosing if you want to.                          -->
-<!--
-Ability is nothing without opportunity - Napoleon Bonaparte
-Nothing happens unless first we dream - Carl Sandburg
-Believe you can and you're halfway there - Theodore Roosevelt
-A place for everything, everything in its place - Benjamin Franklin
-Don't let the fear of striking out hold you back - Babe Ruth
-We can't help everyone, but everyone can help someone - Ronald Reagan
-With self-discipline most anything is possible - Theodore Roosevelt
--->
     
 </head>
 
@@ -94,9 +88,16 @@ With self-discipline most anything is possible - Theodore Roosevelt
         <h1>Quote of the Day</h1>
         <div class="project-info clearfix"> 
             <section class="quote-section">
+                <!-- Let's declare what day it is -->
+                <div id="days"> </div>               
+                <!-- Therefore the quote will be...   -->
                 <div id="quotes"> </div>
-                <ul id="days"> </ul> 
             </section>
+
+            <section class="allWrap clearfix">
+                <div id="allDays"> </div>
+                <div id="allQuotes"> </div>
+            </section>            
         </div>
           
     </main>
