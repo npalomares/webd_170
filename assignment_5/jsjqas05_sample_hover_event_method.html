@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <!--
+      jsjqas05_sample_hover_event_method.html
+	  
+	  Code that shows the hover event.
+  -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment Sample - hover event method</title>
+
+<style>
+  body {font-family: arial;
+  }
+
+  h1 {font-size: 16pt;
+      margin-bottom: 0px;
+      cursor: pointer;
+      text-indent: 20px;
+  }
+	 
+  p {margin: 0px;
+     padding: 10px;
+  }
+  
+  .effect {color: blue;
+  }
+  
+  span {color: red;
+  }
+</style>
+  
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // alert('here');
+   
+    $('h1').hover(
+      
+      function() {
+        $(this).addClass('effect');
+      }, // end mouseover
+      
+      function() {
+        $(this).removeClass('effect');
+      } // end mouseout        
+    ); // end hover
+  }); // end ready
+</script>
+</head>
+
+<body>
+    <p>Demo to see how to use the hover compound event method which takes 2 functions
+    <br>
+    <span>This demo shows the hover on the h2 element, it does not show the hiding and showing</span>
+    </p>
+    
+    <h1>What is a Collie?</h1>
+    <p>There are two varieties of the Collie, the rough-coated collie, being the more familiar
+       [the Lassie of book, movie and TV fame], and the "smooth-coated" collie. The smooth variety
+       of collie is judged by the same standard as the rough variety, except that the references
+       to the quantity and distribution of the coat are not applicable to the smooth.
+    </p>
+   
+    <h1>What is a Border Collie?</h1>
+    <p>Border Collies are the fanatical black and white dogs that have been bred to herd sheep.
+       They come in an assortment of sizes and colors, though they generally range from about
+       30 to 60 pounds and their "typical" markings are black with a white collar, chest, head
+       stripe (blaze), paws, and tail tip. These markings are only the perceived "typical" markings,
+       as border collies also come in red/white, black/red/white ("tri's"), blue merle, red merle,
+       mostly white, tan and black, brindle, sable, and mostly black varieties. They are quite
+       commonly seen in television ads and Hollywood films (the dogs in the movie "Babe", for example,
+       were border collies). They are known for their incredible herding instinct and their keen intelligence.
+    </p>
+</body>
+</html>

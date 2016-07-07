@@ -42,7 +42,29 @@ section.quote-section h4 {
 	color: #0897c3;
 	margin-top: 10px;
 }
-
+blockquote::before {
+	content: '"';
+	font-size: 48px;
+}
+blockquote::after {
+	content: '"';
+	font-size: 48px;
+}
+blockquote {
+    margin-left: 25px;
+    display: inline-block;
+    border-left: 2px solid #CCC;
+    padding: 18px;
+    font-size: 20px;
+    color: #0897c3;
+}
+.active {
+	color: #0897c3;
+}
+.author {
+	font-size: 17px;
+	margin-top: 5px;
+}
 #allDays {
 	text-align: right;
 	width: 300px;

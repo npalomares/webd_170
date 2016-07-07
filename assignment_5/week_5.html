@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Nicholas Palomares -->  
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Week 5 Work</title>
+
+<link href="style.css" rel="stylesheet">	
+
+
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Let's do some jQuery
+    //alert("hello there");
+    //$('h1').html("Hello There!");
+    //$('h1').html("Hello There ").next().text("Welcome to jQuery");
+
+    //Hide the paragraph tag as default
+    $('p').addClass('hide'); 
+
+    //Create a click function that will toggle the class
+    $('h2').click(function() {
+      $(this).next().toggleClass('show');
+      //$(this).next('p').addClass('show');
+      //$(this).next('p').removeClass('hide');  
+    });
+
+    $('h2').hover(
+      function() {
+        //code here
+        alert('over');
+      },
+      function() {
+        //second function
+        alert('and out');
+      }
+    );
+
+    //$('p').addClass('show');
+
+  }); // end ready	
+</script>
+</head>
+
+<body class="week-5">
+  <div class="wrapper">
+    <section class="work-area">
+
+      <!-- Markup goes here -->
+      <h1>Week 5 Work</h1>
+      <h2>WEBD 162 </h2>
+      <p>HTML and CSS</p>
+
+      <h2>WEBD 170</h2>
+      <p>Javascript and jQuery</p>
+
+    </section>
+
+
+  </div><!-- close wrapper -->
+</body>
+</html>

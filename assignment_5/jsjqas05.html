@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Nicholas Palomares -->  
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FAQs Starter File</title>
+
+<link href="style.css" rel="stylesheet">	
+<!-- we need an older version of the framework which supports the Toggle compound event -->	
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    
+    /* 
+    *  the divs are hidden and the plus sign is shown when the page loads
+    */
+    
+    // add the class - it will be replaced when the new class is toggled
+    // the benefit of doing this is because if the JS does not load, you will see all of the content
+    $('div').addClass('close');
+    $('h2').addClass('plus');
+
+    // YOU WILL REPLACE THE TOGGLE COMPOUND EVENT METHOD AS IT IS DEPRECATED
+    // YOU WILL USE WHATEVER OTHER METHODS YOU WISH
+    $("#faqs h2").toggle(
+
+      function() {
+        $(this).toggleClass('minus');
+        $(this).next().show();
+      },
+	  
+      function() {
+        $(this).toggleClass('minus');
+        $(this).next().hide();
+      }
+    ); // end toggle
+  }); // end ready	
+</script>
+</head>
+
+<body>
+    <h1>Directions <em>(you may remove the directions if you wish)</em></h1>
+
+    <section id="intro">
+      <ol>
+        <li>You need to re-code this file so that it works with the latest version of jQuery</li>
+        <li>You need to replace the toggle() compound event method with your own code
+            because the toggle() compound event method is deprecated</li>
+        <li>You CANNOT add any ids or classes to the document. The HTML and CSS code must remain as it is</li>
+        <li>All you will add is the jQuery Code</li>
+        <li>You will use the current version of the jQuery framework</li>
+        <li>You will use the following classes which are located in the embedded style sheet:</li>
+
+          <ul>
+            <li>.open</li>
+            <li>.close</li>
+            <li>.plus</li>
+            <li>.minus</li>
+          </ul>
+		  
+        <li>If you use the hide() and show() effect methods, you will not need to use the .open and .close classes</li>
+        <li>You will also use the <strong>hover compound event method</strong> to change any CSS property (your choice)
+            of the &lt;h2&gt; element when the cursor moves over and off. This will be accomplished by using the CSS() method.
+        </li>
+      </ol>
+    </section>
+
+    <h1>Assignment Demonstration</h1>  
+    <section id="faqs">
+      <h1>jQuery FAQs</h1>
+
+      <h2>What is jQuery?</h2>
+      <div>
+	    <p>jQuery is a library of the JavaScript functions that you're most likely 
+           to need as you develop web sites.
+        </p>
+      </div>
+
+      <h2>Why is jQuery becoming so popular?</h2>
+      <div>
+	    <p>Three reasons:</p>
+          <ul>
+            <li>It's free.</li>
+            <li>It lets you get more done in less time.</li>
+            <li>All of its functions are cross-browser compatible.</li>
+          </ul>
+      </div>
+
+      <h2>Which is harder to learn: jQuery or JavaScript?</h2>
+      <div>
+        <p>For most functions, jQuery is significantly easier to learn 
+           and use than JavaScript. But remember that jQuery is JavaScript.
+        </p>
+      </div>
+    </section>
+</body>
+</html>

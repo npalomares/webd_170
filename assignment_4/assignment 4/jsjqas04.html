@@ -32,47 +32,89 @@
         //************************************************************
         // 3: define an array to hold the daily quotes
         //************************************************************  
-        var quotes = [
-                "Ability is nothing without opportunity - Napoleon Bonaparte",
-                "Nothing happens unless first we dream - Carl Sandburg",
-                "Believe you can and you're halfway there - Theodore Roosevelt",
-                "A place for everything, everything in its place - Benjamin Franklin",
-                "Don't let the fear of striking out hold you back - Babe Ruth",
-                "We can't help everyone, but everyone can help someone - Ronald Reagan",
-                "With self-discipline most anything is possible - Theodore Roosevelt"
-            ];
+        var quotes = [];
+        quotes[0] = "Ability is nothing without opportunity",
+        quotes[1] = "Nothing happens unless first we dream",
+        quotes[2] = "Believe you can and you're halfway there",
+        quotes[3] = "A place for everything, everything in its place",
+        quotes[4] = "Don't let the fear of striking out hold you back",
+        quotes[5] = "We can't help everyone, but everyone can help someone",
+        quotes[6] = "With self-discipline most anything is possible"
+        
 
         var authors = [];
-        var splitQuote = " ";
-        for(var j = 0; j<quotes.length; j++) {
-            //var authors = 'these are neat ' + quotes[j];
-            var authors = quotes[j].split(/ - /);
-            var blockquote = authors[0];
-            var person = authors[1];
-            splitQuote += "who said it - " + person + " what was said - " + blockquote;
-            console.log(splitQuote);
-        }            
+        authors[0] = "Napoleon Bonaparte",
+        authors[1] = "Carl Sandburg",
+        authors[2] = "Theodore Roosevelt",
+        authors[3] = "Benjamin Franklin",
+        authors[4] = "Babe Ruth",
+        authors[5] = "Ronald Reagan",
+        authors[6] = "Theodore Roosevelt"
+
+
+        // var blockquote = [];
+        // var splitQuote = " ";
+
+        // for(var j = 0; j<quotes.length; j++) {
+        //     var authors = 'these are neat ' + quotes[j];
+        //     var authors = quotes[j].split(/ - /);
+        //     var blockquote = authors[0];
+        //     console.log(blockquote);
+
+        //     var person = authors[1];
+        //     console.log(person);
+
+        //     var allTheQuotes = " ";
+        //     for(var b = 0; b < blockquote.length; b++) {
+        //         allTheQuotes = "<h2>What was said..." + blockquote + "</h2>";
+        //     }
+
+        //     var allThePeople = " ";
+        //     for(var p = 0; p < person.length; p++) {
+        //         allThePeople += "<h2>Who said it... " + person + "</h2>";
+        //     }            
+
+        //     splitQuote += "who said it - " + person[quotes] + " what was said - " + blockquote[quotes];
+        //     splitQuote += '<span class="split">' + person[j] + ' - </span>';
+        //     console.log(splitQuote);
+        // }            
 
         // Loop through all the days and add a span with class
         var allDays = " ";
         for(var i=0; i < days.length; i++) {
-            allDays += '<span class="day">' + days[i] + ' - </span>';
+            allDays += '<span id="' + i + '">' + days[i] + ' - </span>';
+            if(days[weekday] == weekday) {
+                console.log("This is it" + weekday);
+            } else {
+                console.log("again, I don't think so.");
+                console.log(weekday + "What the hell" + days[weekday])
+            }
         }
 
         // Loop through all the quotes and add a span with class
         var allQuotes = " ";
         for(var i=0; i < quotes.length; i++) {
-            allQuotes += '<span class="quote">' + quotes[i] + '</span>';
-        }        
+            allQuotes += '<span class="quote-'+ i + '">' + quotes[i] + '</span>';
+        }  
+
+        // Loop through all the quotes and add a span with class
+        var allAuthors = " ";
+        for(var i=0; i < authors.length; i++) {
+            allAuthors += '<span class="quote">' + authors[i] + '</span>';
+        }                 
 
         //onLoad function to target IDs
         window.onload = function() {
+            //what is the index of the days
+            var index = weekday;
+
+
             document.getElementById("days").innerHTML = '<span class="text">Today is..</span><br /><h4 class="fullQuote">' + days[weekday] + '</h4>';            
-            document.getElementById("quotes").innerHTML = '<span class="text">Which means our quote is...</span><br />' + 
-                                                          '<h4 class="fullQuote">' + blockquote + '</h4>' + '<h5> - ' + person + '</h5';            
+            document.getElementById("quotes").innerHTML = '<span class="text">Which means our quote is...</span><br />' + '<blockquote class="fullQuote">' + quotes[weekday] + '</blockquote>' + '<h5 class="author"> - ' + authors[weekday] + '</h5';            
 
             document.getElementById("allQuotes").innerHTML = allQuotes;
-            document.getElementById("allDays").innerHTML = allDays;            
+            document.getElementById("allDays").innerHTML = allDays; 
+            // document.getElementById("splitQuote").innerHTML = splitQuote;            
         }        
       
 
@@ -97,7 +139,11 @@
             <section class="allWrap clearfix">
                 <div id="allDays"> </div>
                 <div id="allQuotes"> </div>
-            </section>            
+
+                <!-- <div id="splitQuote"> </div> -->
+
+
+            </section>                       
         </div>
           
     </main>

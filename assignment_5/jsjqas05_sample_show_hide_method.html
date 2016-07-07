@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+  <!--
+      jsjqas05_sample_show_hide_method.html
+	  
+	  Code that shows how to show/hide an element
+	  and use the toggleClass method.
+  -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment Sample - show / hide and toggleClass</title>
+
+<style>
+  body {font-family: arial;
+         font-size: 100%;
+  }
+  
+  span {color: red;
+  }
+
+  h2 {font-size: 16pt;
+      margin-bottom: 0px;
+      cursor: pointer;
+      text-indent: 20px;
+  }
+	 
+  p {margin: 0px;
+     padding: 10px;
+  }
+  
+  .img_plus {background-image: url(plus.png);
+             background-position: left center;
+             background-repeat: no-repeat;
+  }
+  
+  .img_minus {background-image: url(minus.png);
+              background-position: left center;
+              background-repeat: no-repeat;
+  }
+</style>
+  
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // alert('here');
+ 
+    // start with the paragraphs being hidden so that we can later on use hide() and show()
+    // start with the background image set to a plus sign
+    $('p').css('display' , 'none');
+    $('h2').addClass('img_plus');
+   
+    // when the user clicks on the h2 element
+    // the new class (img_minus) is added, which over writes the initial class (img_plus)
+    // the class (hide)is toggled on and off to show the div
+    $('h2').click(function() {
+      $(this).toggleClass('img_minus');
+     
+      if ($(this).next().css('display') == 'none') {
+        $(this).next().show();
+      } // end if
+      else {
+        $(this).next().hide();
+      }  // end else
+    }); // end click
+  }); // end ready
+</script>
+</head>
+
+<body>
+    <p>Demo to show how to use the show() and hide() methods to show and hide content and also the toggleClass() method to add and remove a class
+    <br>
+	<span>Note that the class names used here are different than the ones in the starter file</span>
+    </p>
+
+    <ul>
+      <li>In this demo, styles are added initially by jQuery, however it could be done using CSS</li>
+	  <li>This demo changes the background image (plus / minus) by toggling the CSS class</li>
+      <li>This demo changes the display from none to block by using the show() / hide() methods</li>
+    </ul>
+      
+    <h1>FAQ - Click to see the answer</h1>
+    
+    <h2>What is a Collie?</h2>
+    <p>There are two varieties of the Collie, the rough-coated collie, being the more familiar
+       [the Lassie of book, movie and TV fame], and the "smooth-coated" collie. The smooth variety
+       of collie is judged by the same standard as the rough variety, except that the references
+       to the quantity and distribution of the coat are not applicable to the smooth.
+    </p>
+   
+    <h2>What is a Border Collie?</h2>
+    <p>Border Collies are the fanatical black and white dogs that have been bred to herd sheep.
+       They come in an assortment of sizes and colors, though they generally range from about
+       30 to 60 pounds and their "typical" markings are black with a white collar, chest, head
+       stripe (blaze), paws, and tail tip. These markings are only the perceived "typical" markings,
+       as border collies also come in red/white, black/red/white ("tri's"), blue merle, red merle,
+       mostly white, tan and black, brindle, sable, and mostly black varieties. They are quite
+       commonly seen in television ads and Hollywood films (the dogs in the movie "Babe", for example,
+       were border collies). They are known for their incredible herding instinct and their keen intelligence.
+    </p>
+  </body>
+</html>
