@@ -1,0 +1,26 @@
+<div class="wrapper">
+
+  <!-- First One -->  
+<h3 class="header"><span class="first"></span>Toggle First</h3>
+  <div class="content closed">
+    <p>This belongs to the first toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+  </div>
+  
+<!-- second One -->  
+<h3 class="header"><span class="first"></span>Toggle Second</h3>
+  <div class="content closed">
+    <p>This belongs to the second toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+  </div>  
+  
+<!-- third One -->  
+<h3 class="header"><span class="first"></span>Toggle Third</h3>
+  <div class="content closed">
+    <p>This belongs to the third toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+  </div>    
+  
+</div><!--close wrapper -->
+
+$('h3.header').click(function() {
+  $(this).next().toggleClass('opened');
+  $(this).find('span.first').toggleClass('second');
+});

@@ -1,0 +1,66 @@
+/***************
+   css starter
+****************/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+---- Micro clearfix ----
+-to clear floats, naturally
+*/
+.clearfix::before,
+.clearfix::after {
+	content: "";
+	display: table;
+}
+.clearfix::after {
+	clear: both;
+}
+.text-center {
+	text-align: center;
+}
+.container {
+	width: 1170px;
+	margin: 0 auto;
+	background-color: #CCC;
+}
+
+/***************************
+	 Assignment Stuff
+***************************/
+.wrapper {
+  width: 25%;
+  padding: 15px;
+  background-color: #CCC;
+}
+h3.header {
+  cursor: pointer;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #FFF;
+}
+h3.header:last-of-type {
+  border-bottom: 1px solid #FFF;
+}
+.closed {
+  display: none;
+}
+.opened {
+  display: block;
+}
+h3 span {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    margin-right: 10px;
+}
+h3 span.first::before {
+    content: "\e080";
+}
+h3 span.second::before {
+    content: "\e114";
+}
