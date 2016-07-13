@@ -7,10 +7,17 @@
 <link href="style.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> 
 <script>
+  // just date object practice for the footer
+  var d = new Date();
+  var year = d.getFullYear();
+  //document.getElementById("year").innerHTML = year; 
+
   $(document).ready(function() {
-    
+    // add the date to the footer
+    document.getElementById("year").innerHTML = year;
+
     // add the class - it will be replaced when the new class is toggled
-    $('div').addClass('close');
+    $('#faqs div').addClass('close');
     $('h2').addClass('plus');
 
     // Let's use the click method as if it is a link
@@ -38,7 +45,13 @@
 </head>
 
 <body>
-
+  <header>
+    <div class="container">
+      <h1>JSJQAS05</h1>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div class="container">
     <section id="faqs">
       <h1>jQuery FAQs</h1>
 
@@ -66,5 +79,13 @@
         </p>
       </div>
     </section>  
+    </div><!-- close container -->
+  </div><!-- close wrapper -->  
+
+  <footer>
+    <div class="container">
+      <p>npalomares - jsjqas05 - <span id="year"> </span></p>
+    </div>
+  </footer>
 </body>
 </html>
