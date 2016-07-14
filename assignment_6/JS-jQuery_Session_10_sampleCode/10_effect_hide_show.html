@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>hide show</title>
+<style>
+#links, #para1 {margin: 25px 0px;}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("#link1").click(function(){
+  $("#para1").hide(2000);  // 2 second duration
+  }); // end function
+  
+  $("#link2").click(function(){
+  $("#para1").show(2000);   // 2 second duration
+  }); // end function
+
+}); //end ready
+
+</script>
+</head>
+
+<body>
+<div id="links">
+<a href="#" id="link1">Click to hide</a>  |  <a href="#" id="link2">Click to show</a>
+</div>
+
+
+<p id="para1">
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+</p>
+
+</body>
+</html>

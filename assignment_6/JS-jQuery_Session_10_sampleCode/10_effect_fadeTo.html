@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>fadeTo</title>
+<style>
+#links, #para1 {margin: 25px 0px;}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("#link1").click(function(){
+  $("#para1").fadeTo(1000, 0.4);  // one second duration
+  }); // end function
+  
+  $("#link2").click(function(){
+  $("#para1").fadeTo(1000, 1.0);  // one second duration
+  }); // end function  
+  
+}); //end ready
+
+</script>
+</head>
+
+<body>
+ <h2>fadeTo() may require some CSS opacity settings depending on what you want to do</h2>
+ 
+<div id="links">
+<a href="#" id="link1">Click to fade from normal to .04</a> | <a href="#" id="link2">Click to fade back</a> 
+
+</div>
+
+
+<p id="para1">
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+</p>
+
+</body>
+</html>

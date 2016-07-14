@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Animation</title>
+
+<style>
+   p {color: red;
+      font-weight: bold;}
+   h1 {font-size: 1.5em;
+       position: relative;}   
+</style>
+
+
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+	
+
+    $('h1').click(function() {
+      $(this).animate( {fontSize: "650%", left: "+=275" }, 2000,
+		      
+	function() {
+	 
+	 $(this).animate( {fontSize: "175%", left: "-=275" }, 1000)
+	 
+	}  // end function
+		      
+	) //end animation
+      
+      
+    }); // end click
+	 
+	 
+	 
+   	
+	
+    
+      
+}); // end ready
+
+</script>
+</head>
+<body>
+   
+ <p>click on the heading below to see the animation</p>  
+	
+
+<h1>This heading will be animated - the text will become larger, move from left, then go back</h1>
+
+<h3>The animation takes a callback function as a parameter</h3>
+
+<div>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position,
+remember to first set the CSS position property of the element to relative, fixed, or absolute!
+<br>
+<br>
+Manipulating other CSS properties work best when there is a default already set in the style sheet, otherwise,
+you are using the browser's default
+</div>
+
+</body>
+</html>

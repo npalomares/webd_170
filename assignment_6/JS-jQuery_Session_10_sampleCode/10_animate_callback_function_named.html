@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Animation using Named Callback Function</title>
+
+<style>
+   .red {color: red;}
+</style>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+   
+
+  
+$(document).ready(function() {
+   
+  function turnRed(){
+    $('h1').addClass('red');
+  }
+	
+
+   $('h1').animate({fontSize: "28pt", marginTop: 100}, 3000, turnRed);	
+	
+    
+      
+}); // end ready
+
+</script>
+</head>
+<body>
+	
+
+<h1>This heading will be animated - the text will become larger and the top margin will change. The callback function will add a class and change the color of the text to red</h1>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Animation using Anonymous Callback</title>
+
+<style>
+   .red {color: red;}
+</style>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+   
+      function getSmall(){
+       
+       $('h1').animate({fontSize: "22pt"}, 1000);
+
+    }
+	
+
+  setInterval(function() {
+      // do this every 3 seconds
+ 
+      $('h1').animate({fontSize: "32pt"}, 1500, getSmall);
+ 
+      }, 3000);	   
+   
+   
+  
+  
+
+      
+}); // end ready
+
+</script>
+</head>
+<body>
+	
+<span style="color: red">the setInterval method will run this animation, every 3 seconds - giving you a continual animation</span>
+<h1>This text will become larger over a 1.5 second duration</h1>
+
+</body>
+</html>

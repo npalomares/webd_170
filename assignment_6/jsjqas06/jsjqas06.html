@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- Nicholas Palomares -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Assignment 6</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- main container -->	
+<div id="main">
+	
+<section id="loginDiv">
+       <!-- when this is clicked on the below form should be displayed and plus sign should change to minus sign-->
+       <p id="login" class="plus">Login</p> 
+       
+       <form>
+	   <p>
+	      <label for="username">Username:</label>
+	      <input type="text" name="username" id="username">
+	   </p>
+	
+	   <p>
+	      <label for="pw">Password:</label>
+	      <input type="password" name="pw" id="pw">
+	   </p>
+	
+	   <p>
+	      <input type="button" value="Submit">
+	   </p>
+	   
+	   <!-- placeholder for response if form data is correct/incorrect --> 
+	  <p id="error"> </p>
+       </form>
+</section>
+
+
+<section id="welcome">
+    <h1>Welcome to the Local jQuery User Group Website</h1>
+       <p>
+          <strong>Click the login button at the top of the page to login. To become a member please <a href="#">Register</a></strong>
+       </p>
+
+   <h2>About this page layout:</h2>
+      <p>
+	The main container (parent) has 'relative' positioning so that the 'login' container can be absolutley positioned with respect to
+	that main container. Otherwise, it would default to being absolutley positioned with respect to the window.
+      </p>
+   
+     <p>
+       In order for the login panel to be placed on top of the page  we need to use  absolute positioning, otherwise,
+       it would move the rest of the content down as done in the FAQ assignment. Technically, absolute positioning takes that element out of
+       the normal flow of the document, so that it is on top of the page. The 'ad' is also absolutely positioned to the same main container.
+    </p>
+</section>
+
+
+<section>
+    <h2>This week's agenda:</h2>
+    <p>There will be a live meeting this Tuesday evening from 7:00pm to 8:00pm PST using our WebEx Conferencing Software.
+       It will be recorded! Please note that the code samples will be available on our GitHub repository.
+    </p>
+</section>
+
+
+<footer>
+	Copyright &copy; Local jQuery User Group	
+</footer>
+
+ 
+ <!--  ad which is absolutely positioned -500px from the top so you do not see it when page loads-->
+ <div id="ad">
+   <div id="adbtn">
+       X
+   </div>
+ </div>
+
+ <!-- end main container -->
+</div>
+
+
+</body>
+</html>

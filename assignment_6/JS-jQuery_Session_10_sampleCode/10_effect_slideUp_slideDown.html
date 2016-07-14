@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>slide up / down</title>
+<style>
+#links, #para1 {margin: 25px 0px;}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("#link1").click(function(){
+  $("#para1").slideUp(500);  // half second duration
+  }); // end function
+  
+  $("#link2").click(function(){
+  $("#para1").slideDown(400);   // half second duration
+  });  // end function
+
+}); //end ready
+
+</script>
+</head>
+
+<body>
+<div id="links">
+<a href="#" id="link1">Click to slide up</a>  |  <a href="#" id="link2">Click to slide down</a>
+</div>
+
+
+<p id="para1">
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+</p>
+
+</body>
+</html>

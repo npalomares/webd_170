@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>delay using fadeOut fadeIn</title>
+<style>
+#links, #para1 {margin: 25px 0px;}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("#link1").click(function(){
+  $("#para1").delay(2000).fadeOut(1000);  // 2 second delay, 1 second fade
+  });
+  
+  $("#link2").click(function(){
+  $("#para1").delay(2000).fadeIn(1000);   // 2 second delay, 1 second fade
+  });
+
+}); //end ready
+
+</script>
+</head>
+
+<body>
+<div id="links">
+<a href="#" id="link1">Click to delay 2 second before fading out</a>  |  <a href="#" id="link2">Click to delay 2 seconds before fading in</a>
+</div>
+
+
+<p id="para1">
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+</p>
+
+</body>
+</html>

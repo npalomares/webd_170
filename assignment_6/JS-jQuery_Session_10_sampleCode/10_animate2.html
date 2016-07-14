@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Animation</title>
+<style>
+#links, #para1 {margin: 25px 0px;}
+#para1  {width: 200px; height: 150px; background-color: red;}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("#link1").click(function(){
+  
+  var $para = $("#para1");  // using the $ to show it is a selection
+  
+    $para.animate({marginLeft: "+=50px"},"slow");  // will move each time clicked
+    
+  }); // end click
+  
+}); //end ready
+
+</script>
+</head>
+
+<body>
+<div id="links">
+<a href="#" id="link1">Click to animate more with each click</a> 
+</div>
+
+
+<p id="para1">
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+</p>
+
+</body>
+</html>
