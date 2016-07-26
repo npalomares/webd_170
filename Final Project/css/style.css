@@ -1,0 +1,222 @@
+/***************
+   css starter
+****************/
+* {
+  margin: 0;
+  padding: 0;
+}
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+.text-center {
+  text-align: center;
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+body {
+  color: #FFF;
+}
+.bye {
+  display: none;
+}
+span.number {
+  font-size: 32px;
+  color: #FFF;
+}
+/***************************
+   Assignment Stuff
+***************************/
+.wrapper {
+  background-color: #FFF;
+  padding: 0 0 40px 0;
+}
+
+header, footer {
+  background-color: #0897c3;
+}
+
+header .logo {
+  width: 25%;
+  float: left;
+  margin-right: 20px;
+}
+header nav {
+  width: 73%;
+  float: left;
+}
+ul#menu {
+  float: right;
+  background-color: transparent !important;
+  border: none !important;
+}
+.ui-menu .ui-menu-item {
+    float: left;
+    color: #FFF !important;
+}
+.ui-menu .ui-menu-item div:hover {
+  /*font-weight: normal !important;*/
+}
+.ui-state-active, 
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active, 
+a.ui-button:active, 
+.ui-button:active, 
+.ui-button.ui-state-active:hover {
+  color: #555 !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+ul.dropdown {
+  background-color: #0897c3;
+  padding: 10px 5px;
+}
+li.services ul.ui-menu {
+    display: block;
+    top: 54px !important;
+    left: 951px !important;
+    width: 200px !important;  
+}
+li.services ul.ui-menu li,
+li.works ul.ui-menu li {
+  width: 100%;
+}
+li.works ul.ui-menu {
+    display: block;
+    top: 54px !important;
+    left: 1062px !important;
+    width: 150px !important; 
+}
+.ui-state-default {
+  border: none !important;
+  background: transparent !important;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.hero {
+  padding: 100px 0;
+  background-color: #CCC;
+  color: #555;
+}
+
+
+h3 {
+  color: #555;
+}
+h3.header {
+  cursor: pointer;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #555;
+  color: #555;
+}
+h3.header:last-of-type {
+  border-bottom: 1px solid #555;
+}
+.closed {
+  display: none;
+}
+.opened {
+  display: block;
+}
+h3 span {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+}
+h3 span.first {
+    background: url(../images/arrow-right.png) no-repeat center center;
+}
+h3 span.second {
+    background: url(../images/arrow-down.png) no-repeat center center;
+}
+main p {
+  padding: 15px;
+  color: #333;
+  /*border-top: 1px solid #333;  */
+}
+section {
+  padding: 40px 0;
+}
+.post-work {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.column-4 {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 30.333333%;
+}
+.column-6 {
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 43%; 
+}
+.inner-col {
+  padding: 20px;
+  background-color: #555;   
+  position: relative;
+}
+h4.widget-title {
+  color: #FFF;
+  font-family: 32px;
+}
+.inner-col button.close-widget {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #FFF;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.inner-col h4 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #FFF;
+}
+.inner-col ul {
+  padding-left: 15px;
+}
+
+
+.contact footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/*footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

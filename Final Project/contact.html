@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- Nicholas Palomares -->
+ <html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <title>JS - Home</title>
+        
+        <link href="css/jquery-ui.css" rel="stylesheet">
+        <link href="css/jquery-ui.structure.css" rel="stylesheet">
+        <link href="css/jquery-ui.theme.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript" src="js/jquery.js"></script> 
+        <script type="text/javascript" src="js/jquery-ui.js"></script> 
+        <script>
+            // Create a new Date object
+            var d = new Date();
+            // Get the full year - ex 2016
+            var year = d.getFullYear();
+
+            $(document).ready(function() {
+                // display the year in the footer
+                document.getElementById('year').innerHTML = year;
+                // Okay... let's drop the real hammers here...
+                $('h3.header').click(function() {
+                  $(this).next().toggleClass('opened');
+                  $(this).find('span.first').toggleClass('second');
+                });  
+
+                // add close functionality to X button on widgets
+                $('button.close-widget').click(function() {
+                    $(this).parent().parent().addClass("bye");
+                });
+                
+                //Jquery UI menu
+                $( function() {
+                    $( "#menu" ).menu();
+                });       
+
+                $( function() {
+                    $( "#sortable" ).sortable();
+                    $( "#sortable" ).disableSelection();
+                });                          
+            });           
+
+        </script>
+
+    </head>
+    <body class="contact">
+        <header>
+            <div class="container clearfix">
+                <div class="logo">
+                    <h1>jQuery Final Project</h1>
+                </div>
+                <nav>
+                    <ul id="menu" class="clearfix">
+                      <li><div>Home</div></li>
+                      <li><div>About</div></li>
+                      <li class="services"><div>Services</div>
+                        <ul class="dropdown">
+                          <li><div>Web Design</div></li>
+                          <li><div>Grahic Design</div></li>
+                          <li><div>Digital Video</div></li>
+                        </ul>
+                      </li>
+                      <li><div>Company</div></li>
+                      <li class="works"><div>Works</div>
+                        <ul class="dropdown">
+                          <li><div>Projects</div>
+                          </li>
+                          <li><div>Assignments</div></li>
+                        </ul>
+                      </li>
+                      <li><div><a href="contact.html">Contact</a></div></li>
+                    </ul>               
+                </nav>
+            </div>
+        </header>
+        <div class="wrapper">
+
+<!--             <section class="hero text-center">
+                <div class="container">
+                    <h2>Welcome to jQuery Central</h2>
+                    <h3>This is where you can find all my work from school</h3>
+                </div>
+
+            </section> -->
+
+            <div class="container">
+                <main class="main clearfix">
+                    <section class="article column-6">
+                        <h3>Contact</h3>
+                           <form>
+                           <p>
+                              <label for="username">Username:</label>
+                              <input type="text" name="username" id="username">
+                           </p>
+                        
+                           <p>
+                              <label for="pw">Password:</label>
+                              <input type="password" name="pw" id="pw">
+                           </p>
+                        
+                           <p>
+                              <input type="button" value="Submit">
+                           </p>
+                           
+                           <!-- placeholder for response if form data is correct/incorrect --> 
+                          <p id="error"> </p>
+                           </form>                   
+                    </section>
+
+                    <section class="pre-work column-6">
+                        <!-- First One -->  
+                        <h3 class="header"><span class="first"></span>Toggle First</h3>
+                          <div class="content closed">
+                            <p>This belongs to the first toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+                          </div>
+                          
+                        <!-- second One -->  
+                        <h3 class="header"><span class="first"></span>Toggle Second</h3>
+                          <div class="content closed">
+                            <p>This belongs to the second toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+                          </div>  
+                          
+                        <!-- third One -->  
+                        <h3 class="header"><span class="first"></span>Toggle Third</h3>
+                          <div class="content closed">
+                            <p>This belongs to the third toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+                          </div>                         
+                    </section>
+                </main>
+    
+
+            </div><!-- close container -->
+        </div><!-- close wrapper -->
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-center">npalomares - jsjq - &copy; <span id="year"> </span></p>
+            </div>
+        </div>
+    </body>
+</html>

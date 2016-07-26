@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- Nicholas Palomares -->
+ <html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <title>JS - Home</title>
+
+        <link href="style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> 
+        <script>
+            // Create a new Date object
+            var d = new Date();
+            // Get the full year - ex 2016
+            var year = d.getFullYear();
+
+            window.onload = function() {
+                // display the year in the footer
+                document.getElementById('year').innerHTML = year;
+                // Okay... let's drop the real hammers here...
+                $('h3.header').click(function() {
+                  $(this).next().toggleClass('opened');
+                  $(this).find('span.first').toggleClass('second');
+                });                 
+            }           
+
+        </script>
+
+    </head>
+    <body class="home">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <h1>jQuery Final Project</h1>
+                </div>
+                <nav>
+                    <ul id="navigation">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Services
+                            <ul>
+                                <li>Graphic Design</li>
+                                <li>Web Design</li>
+                                <li>Digital Video</li>
+                                <li>3D Animation</li>
+                            </ul>
+                        </li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="container">
+                <main class="main">
+                    <h3>Intro</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et .
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et .
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et .                                                
+                    </p>                    
+
+                    <section class="pre-work">
+                        <!-- First One -->  
+                        <h3 class="header"><span class="first"></span>Toggle First</h3>
+                          <div class="content closed">
+                            <p>This belongs to the first toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+                          </div>
+                          
+                        <!-- second One -->  
+                        <h3 class="header"><span class="first"></span>Toggle Second</h3>
+                          <div class="content closed">
+                            <p>This belongs to the second toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+                          </div>  
+                          
+                        <!-- third One -->  
+                        <h3 class="header"><span class="first"></span>Toggle Third</h3>
+                          <div class="content closed">
+                            <p>This belongs to the third toggle header--, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr..</p>
+                          </div>                         
+                    </section>
+
+                    <section class="post-work clearfix">
+                        <div class="column-4">
+                            <div class="inner-col">
+                                <h4 class="widget-title">Widget Title</h4>
+                                <ul>
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column-4">
+                            <div class="inner-col">
+                                <h4 class="widget-title">Widget Title</h4>
+                                <ul>
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </div>
+                        </div>                        
+                        <div class="column-4">
+                            <div class="inner-col">
+                                <h4 class="widget-title">Widget Title</h4>
+                                <ul>
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>    
+
+                    <section class="post-work clearfix">
+                        <div class="column-4">
+                            <div class="inner-col">
+                                <h4 class="widget-title">Widget Title</h4>
+                                <ul>
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column-4">
+                            <div class="inner-col">
+                                <h4 class="widget-title">Widget Title</h4>
+                                <ul>
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </div>
+                        </div>                        
+                        <div class="column-4">
+                            <div class="inner-col">
+                                <h4 class="widget-title">Widget Title</h4>
+                                <ul>
+                                    <li>One</li>
+                                    <li>Two</li>
+                                    <li>Three</li>
+                                    <li>Four</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>    
+
+                </main>
+            </div><!-- close container -->
+        </div><!-- close wrapper -->
+        
+        <!-- Add jQuery CDN here - must have internet connection to work -->
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-center">npalomares - jsjq - &copy; <span id="year"> </span></p>
+            </div>
+        </div>
+    </body>
+</html>

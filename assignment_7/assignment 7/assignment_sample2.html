@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment Sample</title>
+ <style>
+  body {font-family:arial;}
+ </style>
+  
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+  
+   $(document).ready(function() {
+         // alert('here');
+         
+         // creates and element with content and places it after the <p>
+         $('<h2 id="linksHeading">Adoption URLs:</h2>').insertAfter('p');
+	 
+         
+         // creates a div element with content and places it after the <h2>
+         $('<div id="links"></div>').insertAfter('#linksHeading');
+	 
+         
+        
+         // allows us to perform an action on each <a> element separately
+         $('a').each( function() {
+          
+         $(this).clone().appendTo('#links').wrap('<p></p>'); // enclose links in a <p>
+    
+         }); // end each
+    
+  }); //end ready
+
+</script>
+
+  <body>
+  
+      
+     <h1>How to dynamically create content and clone elements</h1>
+     
+    
+   
+     <h2>Below is a sample paragraph - you want to clone the links in that paragraph and place them
+         under the paragraph inside an html element that you will create using jQuery.
+     
+     <br>
+      You also want to dynamically create a heading for the links and add the links below it
+    </h2>
+     
+     <p>
+      Animals make wonderful companions! Consider adopting a shelter pet. You can vist websites like
+     
+     <a href="http://www.petfinder.com">PetFinder</a> and
+     
+     <a href="http://www.adoptapet.com">AdoptaPet</a>. They all have links to many local rescues and
+     
+     humane societies.
+     </p>
+ 
+     
+  </body>
+</html>
+
+
