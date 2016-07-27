@@ -38,6 +38,10 @@ span.number {
   background-color: #FFF;
   padding: 0 0 40px 0;
 }
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
 
 header, footer {
   background-color: #0897c3;
@@ -47,6 +51,10 @@ header .logo {
   width: 25%;
   float: left;
   margin-right: 20px;
+}
+.logo a {
+  color: #FFF;
+  text-decoration: none;
 }
 header nav {
   width: 73%;
@@ -74,20 +82,38 @@ a.ui-button:active,
   background-color: transparent !important;
   border: none !important;
 }
+nav li.services .div::after,
+nav li.works .div::after {
+  background: url(../images/caret.png) no-repeat center center;
+  width: 70%;
+}
+nav li.works .ui-menu-icon,
+nav li.services .ui-menu-icon {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);  
+}
 ul.dropdown {
   background-color: #0897c3;
   padding: 10px 5px;
 }
 li.services ul.ui-menu {
     display: block;
-    top: 54px !important;
-    left: 951px !important;
-    width: 200px !important;  
+    top: 52px !important;
+    left: 867px !important;
+    width: 200px !important; 
 }
 li.services ul.ui-menu li,
 li.works ul.ui-menu li {
   width: 100%;
 }
+.ui-widget-content a {
+  color: #FFF;
+  text-decoration: none;
+}
+nav ul li div#ui-id-11 a:hover {
+  color: #333;
+} 
 li.works ul.ui-menu {
     display: block;
     top: 54px !important;
@@ -101,11 +127,20 @@ li.works ul.ui-menu {
   cursor: pointer;
 }
 .hero {
-  padding: 100px 0;
-  background-color: #CCC;
+  padding: 165px 0;
+  background: url(../images/JQuery_logo.png) no-repeat top center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
   color: #555;
 }
-
+h2.page-title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+  color: #333;
+}
 
 h3 {
   color: #555;
@@ -144,7 +179,6 @@ h3 span.second {
 main p {
   padding: 15px;
   color: #333;
-  /*border-top: 1px solid #333;  */
 }
 section {
   padding: 40px 0;
@@ -193,16 +227,55 @@ h4.widget-title {
 }
 
 
+
+
+/*Contact Page*/
+.contact .form-component {
+  margin: 15px 0;
+}
+.contact label {
+  display: block;
+  color: #333;
+}
+.contact input[type="tel"],
+.contact input[type="email"],
+.contact input[type="text"] {
+  height: 25px;
+}
+.contact input[type="tel"],
+.contact input[type="email"],
+.contact input[type="text"], 
+.contact textarea {
+  width: 100%;
+  border: 1px solid #CCC;
+  border-radius: 8px;
+  padding: 3px 5px;
+}
+.contact #date {
+  width: 60%;
+}
+.ui-datepicker-calendar {
+  background-color: #FFF;
+}
+.contact textarea {
+  height: 75px;
+}
+.contact input.btn {
+  padding: 10px 25px;
+  background-color: #0897c3;
+  border-radius: 0;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+}
+.contact input.btn:hover {
+  color: #d1d1d1;
+}
 .contact footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
-/*footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}*/
+
 
 
 

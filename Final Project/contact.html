@@ -36,10 +36,11 @@
                     $( "#menu" ).menu();
                 });       
 
+
+                // page specific jquery ui funcionality
                 $( function() {
-                    $( "#sortable" ).sortable();
-                    $( "#sortable" ).disableSelection();
-                });                          
+                   $( "#date" ).datepicker();
+                });                        
             });           
 
         </script>
@@ -49,7 +50,7 @@
         <header>
             <div class="container clearfix">
                 <div class="logo">
-                    <h1>jQuery Final Project</h1>
+                    <a href="index.html"><h1>jQuery Final Project</h1></a>
                 </div>
                 <nav>
                     <ul id="menu" class="clearfix">
@@ -77,32 +78,48 @@
         </header>
         <div class="wrapper">
 
-<!--             <section class="hero text-center">
-                <div class="container">
-                    <h2>Welcome to jQuery Central</h2>
-                    <h3>This is where you can find all my work from school</h3>
-                </div>
-
-            </section> -->
 
             <div class="container">
                 <main class="main clearfix">
+
+                    <h2 class="page-title">Contact</h2>    
+
                     <section class="article column-6">
-                        <h3>Contact</h3>
+                        <p>Please fill out the form below to setup a free consultation.</p>
                            <form>
-                           <p>
-                              <label for="username">Username:</label>
-                              <input type="text" name="username" id="username">
-                           </p>
+                           <div class="form-component">
+                              <label for="fullname">Full Name:</label>
+                              <input type="text" name="fullname" id="fullname">
+                              <span class="error"> </span>
+                           </div>
+
+                           <div class="form-component">
+                              <label for="email">Email:</label>
+                              <span class="error"> </span>
+                              <input type="email" name="email" id="email">
+                           </div>  
+
+                           <div class="form-component">
+                              <label for="tel">Phone:</label>
+                              <input type="tel" name="tel" id="tel">
+                              <span class="error"> </span>
+                           </div>  
+
+                           <div class="form-component">
+                              <label for="datetime">Best Day to Meet:</label>
+                              <input type="text" name="date" id="date">
+                              <span class="error"> </span>
+                           </div>                                                                                 
                         
-                           <p>
-                              <label for="pw">Password:</label>
-                              <input type="password" name="pw" id="pw">
-                           </p>
+                           <div class="form-component">
+                              <label for="description">Brief Description of your project:</label>
+                              <textarea type="text" name="description" id="description"></textarea>
+                              <span class="error"> </span>
+                           </div>
                         
-                           <p>
-                              <input type="button" value="Submit">
-                           </p>
+                           <div class="form-component">
+                              <input type="button" class="btn" value="Submit">
+                           </div>
                            
                            <!-- placeholder for response if form data is correct/incorrect --> 
                           <p id="error"> </p>
